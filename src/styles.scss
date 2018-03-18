@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+$default-font-family: "Times New Roman", STFangSong, Arial, Helvetica, sans-serif;
+
+* {
+	font-family: $default-font-family;
+	color: black;
+}
+
+.center {
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+}
+
+.container {
+	@extend .center;
+}
