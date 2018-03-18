@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	strings: { [key: string]: string };
-
-	constructor() {
-		this.strings.join_now = '立即加入！';
-	}
 }
