@@ -9,3 +9,7 @@ section {
 section+section {
 	border-top: $section-seperator-style;
 }
+
+router-outlet {
+	margin: 50px;
+}

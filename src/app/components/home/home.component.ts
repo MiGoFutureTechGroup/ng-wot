@@ -6,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-	strings: { [key: string]: string } = {};
 
-	constructor() {
-		this.strings.join_now = '立即加入！';
-	}
+	constructor() { }
 
 	ngOnInit() {
 	}

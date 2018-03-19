@@ -51,6 +51,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import { FooterComponent } from './components/footer/footer.component';
 		MatTabsModule,
 		MatToolbarModule,
 		MatTooltipModule,
-	]
+	],
+	declarations: [WelcomeComponent]
 })
 class MaterialModule {}
 

@@ -1,0 +1,75 @@
+$default-nav-bgcolor: #333;
+$active-nav-bgcolor: #4caf50;
+$default-nav-color: #fff;
+$hover-nav-bgcolor: #000;
+
+nav ul {
+	position: fixed;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	width: 100%;
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: $default-nav-bgcolor;
+
+	li {
+		float: left;
+		margin: 0;
+		padding: 0;
+
+		a, .dropbtn {
+			display: inline-block;
+			color: $default-nav-color;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+
+			$default-dimension: 20px;
+			font-size: $default-dimension;
+			line-height: $default-dimension;
+			height: $default-dimension;
+
+			&.active {
+				background-color: $active-nav-bgcolor;
+			}
+
+			&:hover:not(.active) {
+				background-color: $hover-nav-bgcolor;
+			}
+		}
+
+		&.dropdown {
+			display: inline-block;
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				max-width: 200px;
+				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+				z-index: 1;
+
+				a {
+					color: #000;
+					padding: 12px 16px;
+					text-decoration: none;
+					display: block;
+					text-align: left;
+
+					&:hover {
+						background-color: #f1f1f1;
+					}
+				}
+			}
+
+			&:hover .dropdown-content {
+				display: block;
+			}
+		}
+	}
+}

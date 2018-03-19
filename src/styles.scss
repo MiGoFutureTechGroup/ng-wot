@@ -17,3 +17,7 @@ $default-font-family: "Times New Roman", STFangSong, Arial, Helvetica, sans-seri
 .container {
 	@extend .center;
 }
+
+.float-right {
+	float: right;
+}

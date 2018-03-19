@@ -1,0 +1,28 @@
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+	overflow: hidden;
+	background-color: #333;
+
+	* {
+		display: inline-block;
+		height: 30px;
+		text-decoration: none;
+		color: #fff;
+	}
+
+	p {
+		position: static;
+
+		font-style: italic;
+		line-height: 30px;
+
+		a {
+			color: #0f0;
+		}
+	}
+}
