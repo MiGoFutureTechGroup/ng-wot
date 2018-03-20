@@ -3,9 +3,6 @@
 
 nav ul {
 	@extend %topmost-node;
-	position: fixed;
-	position: -webkit-sticky;
-	position: sticky;
 	top: 0;
 	width: 100%;
 
@@ -17,8 +14,6 @@ nav ul {
 
 	li {
 		float: left;
-		margin: 0;
-		padding: 0;
 
 		a, .dropbtn {
 			display: inline-block;
@@ -36,7 +31,7 @@ nav ul {
 				background-color: $active-navbar-bgcolor;
 			}
 
-			&:hover:not(.active) {
+			&:hover {
 				background-color: $hover-navbar-bgcolor;
 			}
 		}
@@ -44,30 +39,30 @@ nav ul {
 		&.dropdown {
 			display: inline-block;
 
-			.dropdown-content {
-				display: none;
-				position: absolute;
-				background-color: #f9f9f9;
-				min-width: 160px;
-				max-width: 200px;
-				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-				z-index: 1;
-
-				a {
-					color: #000;
-					padding: 12px 16px;
-					text-decoration: none;
-					display: block;
-					text-align: left;
-
-					&:hover {
-						background-color: #f1f1f1;
-					}
-				}
-			}
-
 			&:hover .dropdown-content {
 				display: block;
+			}
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			max-width: 200px;
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+			z-index: 1;
+
+			a {
+				color: #000;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+
+				&:hover {
+					background-color: #f1f1f1;
+				}
 			}
 		}
 	}

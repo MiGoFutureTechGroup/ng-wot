@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from '../components/home/home.component';
+import { UsersComponent } from '../components/users/users.component';
 import { MaterialsComponent } from '../components/materials/materials.component';
 import { WelcomeComponent } from '../components/welcome/welcome.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
@@ -10,6 +11,9 @@ import { PageNotFoundComponent } from '../components/page-not-found/page-not-fou
 const routes: Routes = [{
 	path: 'home',
 	component: HomeComponent
+}, {
+	path: 'users',
+	component: UsersComponent,
 }, {
 	path: 'materials',
 	component: MaterialsComponent,
