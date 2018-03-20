@@ -53,6 +53,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { FooterComponent } from './components/footer/footer.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -91,7 +92,8 @@ import { UsersComponent } from './components/users/users.component';
 		MatToolbarModule,
 		MatTooltipModule,
 	],
-	declarations: [WelcomeComponent, UsersComponent]
+	declarations: [WelcomeComponent, UsersComponent],
+	providers: [UserService]
 })
 class MaterialModule {}
 
