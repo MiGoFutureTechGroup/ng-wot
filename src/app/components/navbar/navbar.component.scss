@@ -1,14 +1,11 @@
-$default-nav-bgcolor: #333;
-$active-nav-bgcolor: #4caf50;
-$default-nav-color: #fff;
-$hover-nav-bgcolor: #000;
+@import "../../../variables.scss";
 
 nav ul {
 	position: fixed;
-	position: -webkit-sticky;
-	position: sticky;
+	z-index: 1000;
 	top: 0;
 	width: 100%;
+	height: $default-navbar-height;
 
 	list-style-type: none;
 	margin: 0;

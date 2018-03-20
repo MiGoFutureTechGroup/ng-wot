@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-$default-font-family: "Times New Roman", STFangSong, Arial, Helvetica, sans-serif;
+@import "variables.scss";
 
 * {
 	font-family: $default-font-family;
 	color: black;
+	margin: 0;
+	padding: 0;
 }
 
 .center {
@@ -20,4 +20,11 @@ $default-font-family: "Times New Roman", STFangSong, Arial, Helvetica, sans-seri
 
 .float-right {
 	float: right;
+}
+
+main {
+	position: absolute;
+	top: $default-navbar-height;
+	bottom: $default-footer-height;
+	height: calc(100vh - #{$default-navbar-height} - #{$default-footer-height});
 }

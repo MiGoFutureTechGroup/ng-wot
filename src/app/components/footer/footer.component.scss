@@ -1,7 +1,11 @@
+@import "../../../variables.scss";
+
 footer {
 	position: fixed;
+	z-index: 1000;
 	bottom: 0;
 	width: 100%;
+	height: $default-footer-height;
 	margin: 0;
 	padding: 0;
 
@@ -13,6 +17,7 @@ footer {
 		height: 30px;
 		text-decoration: none;
 		color: #fff;
+		vertical-align: middle;
 	}
 
 	p {
@@ -23,6 +28,10 @@ footer {
 
 		a {
 			color: #0f0;
+
+			&:hover {
+				text-shadow: 1px 1px #eec;
+			}
 		}
 	}
 }
