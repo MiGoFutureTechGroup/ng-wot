@@ -52,6 +52,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 @NgModule({
@@ -90,7 +91,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 		MatToolbarModule,
 		MatTooltipModule,
 	],
-	declarations: [WelcomeComponent]
+	declarations: [WelcomeComponent, UsersComponent]
 })
 class MaterialModule {}
 
