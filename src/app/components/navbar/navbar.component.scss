@@ -1,9 +1,8 @@
-$default-nav-bgcolor: #333;
-$active-nav-bgcolor: #4caf50;
-$default-nav-color: #fff;
-$hover-nav-bgcolor: #000;
+@import "../../../assets/variables";
+@import "../../../assets/global";
 
 nav ul {
+	@extend %topmost-node;
 	position: fixed;
 	position: -webkit-sticky;
 	position: sticky;
@@ -14,7 +13,7 @@ nav ul {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: $default-nav-bgcolor;
+	background-color: $default-navbar-bgcolor;
 
 	li {
 		float: left;
@@ -23,7 +22,7 @@ nav ul {
 
 		a, .dropbtn {
 			display: inline-block;
-			color: $default-nav-color;
+			color: $default-navbar-color;
 			text-align: center;
 			padding: 14px 16px;
 			text-decoration: none;
@@ -34,11 +33,11 @@ nav ul {
 			height: $default-dimension;
 
 			&.active {
-				background-color: $active-nav-bgcolor;
+				background-color: $active-navbar-bgcolor;
 			}
 
 			&:hover:not(.active) {
-				background-color: $hover-nav-bgcolor;
+				background-color: $hover-navbar-bgcolor;
 			}
 		}
 

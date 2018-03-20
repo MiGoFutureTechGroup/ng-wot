@@ -1,4 +1,8 @@
+@import "../../../assets/variables";
+@import "../../../assets/global";
+
 footer {
+	@extend %topmost-node;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
