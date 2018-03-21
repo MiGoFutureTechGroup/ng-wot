@@ -55,6 +55,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserService } from './services/user.service';
 import { UserDetailComponent } from './components/users/user-detail.component';
+import { UserTypeComponent } from './components/users/user-type.component';
 
 
 @NgModule({
@@ -96,7 +97,8 @@ import { UserDetailComponent } from './components/users/user-detail.component';
 	declarations: [
 		WelcomeComponent,
 		UsersComponent,
-		UserDetailComponent
+		UserDetailComponent,
+		UserTypeComponent
 	],
 	providers: [
 		UserService
