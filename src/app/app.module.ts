@@ -92,8 +92,13 @@ import { UserService } from './services/user.service';
 		MatToolbarModule,
 		MatTooltipModule,
 	],
-	declarations: [WelcomeComponent, UsersComponent],
-	providers: [UserService]
+	declarations: [
+		WelcomeComponent,
+		UsersComponent
+	],
+	providers: [
+		UserService
+	]
 })
 class MaterialModule {}
 
