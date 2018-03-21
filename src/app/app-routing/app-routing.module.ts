@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from '../components/home/home.component';
 import { UsersComponent } from '../components/users/users.component';
+import { UserDetailComponent } from '../components/users/user-detail.component';
+import { UserTypeComponent } from '../components/users/user-type.component';
 import { MaterialsComponent } from '../components/materials/materials.component';
 import { WelcomeComponent } from '../components/welcome/welcome.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
@@ -14,6 +16,16 @@ const routes: Routes = [{
 }, {
 	path: 'users',
 	component: UsersComponent,
+	children: [{
+		path: 'new',
+		children: [{
+			path: 'user',
+			component: UserDetailComponent
+		}, {
+			path: 'type',
+			component: UserTypeComponent
+		}]
+	}]
 }, {
 	path: 'materials',
 	component: MaterialsComponent,
