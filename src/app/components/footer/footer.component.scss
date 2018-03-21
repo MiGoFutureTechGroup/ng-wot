@@ -1,6 +1,8 @@
-@import "../../../variables.scss";
+@import "../../../assets/variables";
+@import "../../../assets/global";
 
 footer {
+	@extend %topmost-node;
 	position: fixed;
 	z-index: 1000;
 	bottom: 0;

@@ -1,8 +1,8 @@
-@import "../../../variables.scss";
+@import "../../../assets/variables";
+@import "../../../assets/global";
 
 nav ul {
-	position: fixed;
-	z-index: 1000;
+	@extend %topmost-node;
 	top: 0;
 	width: 100%;
 	height: $default-navbar-height;
@@ -11,16 +11,14 @@ nav ul {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: $default-nav-bgcolor;
+	background-color: $default-navbar-bgcolor;
 
 	li {
 		float: left;
-		margin: 0;
-		padding: 0;
 
 		a, .dropbtn {
 			display: inline-block;
-			color: $default-nav-color;
+			color: $default-navbar-color;
 			text-align: center;
 			padding: 14px 16px;
 			text-decoration: none;
@@ -31,41 +29,41 @@ nav ul {
 			height: $default-dimension;
 
 			&.active {
-				background-color: $active-nav-bgcolor;
+				background-color: $active-navbar-bgcolor;
 			}
 
-			&:hover:not(.active) {
-				background-color: $hover-nav-bgcolor;
+			&:hover {
+				background-color: $hover-navbar-bgcolor;
 			}
 		}
 
 		&.dropdown {
 			display: inline-block;
 
-			.dropdown-content {
-				display: none;
-				position: absolute;
-				background-color: #f9f9f9;
-				min-width: 160px;
-				max-width: 200px;
-				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-				z-index: 1;
-
-				a {
-					color: #000;
-					padding: 12px 16px;
-					text-decoration: none;
-					display: block;
-					text-align: left;
-
-					&:hover {
-						background-color: #f1f1f1;
-					}
-				}
-			}
-
 			&:hover .dropdown-content {
 				display: block;
+			}
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			max-width: 200px;
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+			z-index: 1;
+
+			a {
+				color: #000;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+
+				&:hover {
+					background-color: #f1f1f1;
+				}
 			}
 		}
 	}

@@ -15,8 +15,6 @@ export class MaterialsComponent implements OnInit {
 	@ViewChild(MatSort) sort: MatSort;
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 
-	materials = [];
-
 	constructor() { }
 
 	ngOnInit() {
@@ -25,6 +23,12 @@ export class MaterialsComponent implements OnInit {
 	ngAfterViewInit() {
 		this.dataSource.sort = this.sort;
 		this.dataSource.paginator = this.paginator;
+	}
+
+	applyFilter(filterValue: string) {
+		filterValue = filterValue.trim()
+		filterValue = filterValue.toLowerCase()
+		this.dataSource.filter = filterValue;
 	}
 
 	/** Whether the number of selected elements matches the total number of rows. */

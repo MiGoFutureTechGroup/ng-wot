@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import "variables.scss";
+@import "./assets/variables";
 
 * {
 	font-family: $default-font-family;
-	color: black;
+	color: #000;
+}
+
+body {
 	margin: 0;
 	padding: 0;
 }
