@@ -44,6 +44,11 @@ import { UserService } from './services/user.service';
 		AppRoutingModule,
 		MaterialModule,
 	],
+
+	entryComponents: [
+		UserDetailComponent
+	],
+
 	providers: [
 		UserService
 	],
