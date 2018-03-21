@@ -10,17 +10,33 @@
 				<a routerLink="/users/new/type">创建新用户类型</a>
 			</div>
 		</li>
-		<li>
-			<a routerLink="/materials">料号管理</a>
+		<li class="dropdown">
+			<a routerLink="/materials" class="dropbtn">料号管理</a>
+			<div class="dropdown-content">
+				<a routerLink="/materials/new/material">创建新料号</a>
+				<a routerLink="/materials/new/type">创建新品目类型</a>
+			</div>
 		</li>
-		<li>
-			<a routerLink="/purchase">采购管理</a>
+		<li class="dropdown">
+			<a routerLink="/purchase" class="dropbtn">采购管理</a>
+			<div class="dropdown-content">
+				<a routerLink="/purchase/new/order">新建采购订单</a>
+			</div>
 		</li>
-		<li>
-			<a routerLink="/sales">销售管理</a>
+		<li class="dropdown">
+			<a routerLink="/sales" class="dropbtn">销售管理</a>
+			<div class="dropdown-content">
+				<a routerLink="/sales/new/order">新建销售订单</a>
+			</div>
 		</li>
 		<li>
 			<a routerLink="/warehouse">库存管理</a>
+		</li>
+		<li class="dropdown">
+			<a routerLink="/manufacture" class="dropbtn">生产管理</a>
+			<div class="dropdown-content">
+				<a routerLink="/manufacture/new/plan">新建生产计划</a>
+			</div>
 		</li>
 	</ul>
 </nav>
