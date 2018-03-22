@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { User } from '../../models/user';
 import { UserType } from '../../models/user-type';
@@ -19,7 +21,11 @@ export class NavbarComponent implements OnInit {
 	selectedUser: User;
 	selectedUserType: UserType;
 
-	constructor(public dialog: MatDialog) { }
+	constructor(
+		private route: ActivatedRoute,
+		private location: Location,
+		public dialog: MatDialog,
+	) { }
 
 	ngOnInit() {
 	}
