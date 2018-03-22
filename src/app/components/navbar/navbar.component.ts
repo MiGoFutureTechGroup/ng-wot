@@ -16,17 +16,23 @@ const DIALOG_HEIGHT: string = '';
 })
 export class NavbarComponent implements OnInit {
 
+	selectedUser: User;
+	selectedUserType: UserType;
+
 	constructor(public dialog: MatDialog) { }
 
 	ngOnInit() {
 	}
 
 	openNewUserDialog(): void {
+		if (!this.selectedUser) {
+			this.selectedUser = new User();
+		}
 		let dialogRef = this.dialog.open(UserDetailComponent, {
 			width: DIALOG_WIDTH,
 			height: DIALOG_HEIGHT,
 			data: {
-				user: new User()
+				user: this.selectedUser
 			},
 		});
 		dialogRef.afterClosed().subscribe(result => {
@@ -36,11 +42,14 @@ export class NavbarComponent implements OnInit {
 	}
 
 	openNewUserTypeDialog(): void {
+		if (!this.selectedUserType) {
+			this.selectedUserType = new UserType();
+		}
 		let dialogRef = this.dialog.open(UserTypeComponent, {
 			width: DIALOG_WIDTH,
 			height: DIALOG_HEIGHT,
 			data: {
-				type: new UserType()
+				type: this.selectedUserType
 			},
 		});
 		dialogRef.afterClosed().subscribe(result => {
