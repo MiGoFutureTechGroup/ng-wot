@@ -31,8 +31,10 @@ nav ul {
 			&.active {
 				background-color: $active-navbar-bgcolor;
 			}
+		}
 
-			&:hover {
+		&:hover > {
+			a, .dropbtn {
 				background-color: $hover-navbar-bgcolor;
 			}
 		}
