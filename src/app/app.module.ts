@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 // 用户自定义模块
-import { PopupModule } from './modules/popup/popup.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MaterialModule } from './modules/material.module';
 // 用户自定义组件
@@ -41,7 +40,6 @@ import { SessionModule } from './modules/session/session.module';
 	imports: [
 		BrowserModule,
 		FormsModule,
-		PopupModule,
 		SessionModule,
 		AppRoutingModule,
 		MaterialModule,
