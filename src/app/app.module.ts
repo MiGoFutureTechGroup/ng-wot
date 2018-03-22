@@ -20,6 +20,7 @@ import { UsersComponent } from './components/users/users.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UserDetailComponent } from './components/users/user-detail.component';
 import { UserTypeComponent } from './components/users/user-type.component';
+import { WarehouseComponent } from './components/warehouse/warehouse.component';
 
 // 用户自定义服务
 import { UserService } from './services/user.service';
@@ -39,6 +40,7 @@ import { SessionModule } from './modules/session/session.module';
 		UsersComponent,
 		UserDetailComponent,
 		UserTypeComponent,
+		WarehouseComponent,
 	],
 	imports: [
 		// 浏览器
