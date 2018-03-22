@@ -9,7 +9,7 @@ import { MaterialModule } from './modules/material.module';
 // 用户自定义组件
 import { AppComponent } from './app.component';
 import { MaterialsComponent } from './components/materials/materials.component';
-import { MaterialDetailComponent } from './components/material-detail/material-detail.component';
+import { MaterialDetailComponent } from './components/materials/material-detail.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
