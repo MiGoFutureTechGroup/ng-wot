@@ -31,3 +31,7 @@ main {
 	bottom: $default-footer-height;
 	height: calc(100vh - #{$default-navbar-height} - #{$default-footer-height});
 }
+
+.cursor.pointer {
+	cursor: pointer;
+}

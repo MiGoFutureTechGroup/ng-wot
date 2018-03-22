@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 
+import { User } from '../../models/user';
 import { UserDetailComponent } from '../users/user-detail.component';
-import { User, EMPTY_USER } from '../../models/user';
+import { UserTypeComponent } from '../users/user-type.component';
 
 const DIALOG_WIDTH: string = '250px';
 const DIALOG_HEIGHT: string = '';
@@ -20,7 +21,6 @@ export class NavbarComponent implements OnInit {
 	}
 
 	openNewUserDialog(): void {
-		let config: MatDialogConfig<User>;
 		let dialogRef = this.dialog.open(UserDetailComponent, {
 			width: DIALOG_WIDTH,
 			height: DIALOG_HEIGHT,
@@ -31,6 +31,12 @@ export class NavbarComponent implements OnInit {
 		dialogRef.afterClosed().subscribe(result => {
 			console.log('用户信息修订对话框 已关闭！');
 			// TODO 上传信息改动
+		})
+	}
+
+	openNewUserTypeDialog(): void {
+		let dialogRef = this.dialog.open(UserTypeComponent, {
+
 		})
 	}
 }
