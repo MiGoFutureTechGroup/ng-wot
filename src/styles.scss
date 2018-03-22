@@ -32,6 +32,69 @@ main {
 	height: calc(100vh - #{$default-navbar-height} - #{$default-footer-height});
 }
 
-.cursor.pointer {
-	cursor: pointer;
+.cursor {
+	// 指针：默认
+	&.default {
+		cursor: default;
+	}
+
+	// 指针：链接/按钮
+	&.pointer {
+		cursor: pointer;
+	}
+
+	// 指针：禁止
+	&.no-drop {
+		cursor: no-drop;
+	}
+
+	// 指针：移动
+	&.all-scroll {
+		cursor: all-scroll;
+	}
+
+	// 指针：单元格
+	&.cell {
+		cursor: cell;
+	}
+
+	// 指针：改变列宽
+	&.col-resize {
+		cursor: col-resize;
+	}
+
+	// 指针：改变行高
+	&.row-resize {
+		cursor: row-resize;
+	}
+
+	// 指针：抓取
+	&.grab {
+		cursor: grab;
+	}
+
+	// 指针：正在抓取
+	&.grabbing {
+		cursor: grabbing;
+	}
+
+	// 指针：正在处理中
+	&.progress {
+		cursor: progress;
+	}
+
+	// 指针：等待
+	&.wait {
+		cursor: wait;
+	}
+
+	// 指针：放大
+	&.zoom-in {
+		cursor: zoom-in;
+	}
+
+	// 指针：缩小
+	&.zoom-out {
+		cursor: zoom-out;
+	}
 }
