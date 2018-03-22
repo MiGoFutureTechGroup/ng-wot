@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 
 import { User } from '../../models/user';
+import { UserType } from '../../models/user-type';
 import { UserDetailComponent } from '../users/user-detail.component';
 import { UserTypeComponent } from '../users/user-type.component';
 
@@ -31,12 +32,20 @@ export class NavbarComponent implements OnInit {
 		dialogRef.afterClosed().subscribe(result => {
 			console.log('用户信息修订对话框 已关闭！');
 			// TODO 上传信息改动
-		})
+		});
 	}
 
 	openNewUserTypeDialog(): void {
 		let dialogRef = this.dialog.open(UserTypeComponent, {
-
-		})
+			width: DIALOG_WIDTH,
+			height: DIALOG_HEIGHT,
+			data: {
+				type: new UserType()
+			},
+		});
+		dialogRef.afterClosed().subscribe(result => {
+			console.log('用户类型修订对话框 已关闭！');
+			// TODO 上传信息改动
+		});
 	}
 }
