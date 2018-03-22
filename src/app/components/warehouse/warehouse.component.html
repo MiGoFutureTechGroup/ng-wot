@@ -1,3 +1,168 @@
-<p>
-  warehouse works!
-</p>
+<mat-card>
+  <mat-card-header *ngIf="true">
+    <mat-card-title>
+      <h1>入库登记</h1>
+    </mat-card-title>
+    <mat-card-subtitle>Instockroom Registration</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-header *ngIf="false">
+    <mat-card-title>
+      <h1>出库登记</h1>
+    </mat-card-title>
+    <mat-card-subtitle>Outstockroom Registration</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="table-container mat-elevation-z8">
+
+    <!-- Input -->
+    <mat-table #table1 [dataSource]="dataSource1">
+
+      <!-- Provider Column -->
+      <ng-container matColumnDef="rcptDate">
+        <mat-header-cell *matHeaderCellDef> 收货日期 </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+        <mat-form-field>
+          <input matInput tabindex="1" [matDatepicker]="picker" placeholder="请选择日期" [(ngModel)]="element.rcptDate" disabled>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker
+              touchUi="true"
+              disabled="false">
+          </mat-datepicker>
+        </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Provider Column -->
+      <ng-container matColumnDef="providerId">
+        <mat-header-cell *matHeaderCellDef> 供应商 </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <input matInput tabindex="2" [(ngModel)]="element.providerId">
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <!-- P/N Column -->
+      <ng-container matColumnDef="partId">
+        <mat-header-cell *matHeaderCellDef> 料号 </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <input matInput tabindex="3" [(ngModel)]="element.partId">
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Amount Column -->
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef> 数量 </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <input matInput tabindex="4" [(ngModel)]="element.amount">
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Unit Column -->
+      <ng-container matColumnDef="unit">
+        <mat-header-cell *matHeaderCellDef> 单位 </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <mat-select tabindex="5" [(ngModel)]="element.unit">
+              <mat-option *ngFor="let unit of units" [value]="unit.id">
+                {{ unit.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Comment Column -->
+      <ng-container matColumnDef="comment">
+        <mat-header-cell *matHeaderCellDef> 备注 </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <input matInput tabindex="6" [(ngModel)]="element.comment">
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns1;">
+      </mat-row>
+    </mat-table>
+  </mat-card-content>
+
+  <mat-card-content class="table-container mat-elevation-z8">
+
+    <!-- Display -->
+    <div class="table-header">
+      <mat-form-field class="input-search">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="搜索">
+      </mat-form-field>
+    </div>
+
+    <mat-table #table2 [dataSource]="dataSource2" matSort>
+
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Provider Column -->
+      <ng-container matColumnDef="providerId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 供应商 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.providerId}} </mat-cell>
+      </ng-container>
+
+      <!-- P/N Column -->
+      <ng-container matColumnDef="partId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 料号 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.partId}} </mat-cell>
+      </ng-container>
+
+      <!-- Amount Column -->
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 数量 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+      </ng-container>
+
+      <!-- Unit Column -->
+      <ng-container matColumnDef="unit">
+        <mat-header-cell *matHeaderCellDef> 单位 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.unit}} </mat-cell>
+      </ng-container>
+
+      <!-- Comment Column -->
+      <ng-container matColumnDef="comment">
+        <mat-header-cell *matHeaderCellDef> 备注 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.comment}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns2;"
+               (click)="selection.toggle(row)">
+      </mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   [showFirstLastButtons]="true">
+    </mat-paginator>
+  </mat-card-content>
+</mat-card>
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
