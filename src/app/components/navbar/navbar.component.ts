@@ -63,4 +63,10 @@ export class NavbarComponent implements OnInit {
 			// TODO 上传信息改动
 		});
 	}
+
+	openNewMaterialDialog(): void {
+	}
+
+	openNewMaterialTypeDialog(): void {
+	}
 }
