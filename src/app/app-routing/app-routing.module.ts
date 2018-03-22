@@ -9,6 +9,7 @@ import { UserTypeComponent } from '../components/users/user-type.component';
 import { MaterialsComponent } from '../components/materials/materials.component';
 import { WelcomeComponent } from '../components/welcome/welcome.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
+import { WarehouseComponent } from '../components/warehouse/warehouse.component';
 
 // 测试用导入
 import { LoginComponent } from '../modules/session/components/login/login.component';
@@ -26,6 +27,16 @@ const routes: Routes = [{
 	children: [{
 		path: ':id',
 		component: MaterialsComponent
+	}]
+}, {
+	path: 'warehouse',
+	//component: WarehouseComponent,
+	children: [{
+		path: 'input',
+		component: WarehouseComponent,
+	}, {
+		path: 'output',
+		component: WarehouseComponent,
 	}]
 }, {
 	path: 'login',
