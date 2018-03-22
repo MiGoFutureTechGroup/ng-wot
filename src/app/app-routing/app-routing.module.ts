@@ -10,22 +10,16 @@ import { MaterialsComponent } from '../components/materials/materials.component'
 import { WelcomeComponent } from '../components/welcome/welcome.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 
+// 测试用导入
+import { LoginComponent } from '../modules/session/components/login/login.component';
+
+
 const routes: Routes = [{
 	path: 'home',
 	component: HomeComponent
 }, {
 	path: 'users',
-	component: UsersComponent,
-	children: [{
-		path: 'new',
-		children: [{
-			path: 'user',
-			component: UserDetailComponent
-		}, {
-			path: 'type',
-			component: UserTypeComponent
-		}]
-	}]
+	component: UsersComponent
 }, {
 	path: 'materials',
 	component: MaterialsComponent,
@@ -33,6 +27,9 @@ const routes: Routes = [{
 		path: ':id',
 		component: MaterialsComponent
 	}]
+}, {
+	path: 'login',
+	component: LoginComponent,
 }, {
 	path: '',
 	component: WelcomeComponent,
