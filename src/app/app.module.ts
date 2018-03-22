@@ -51,7 +51,8 @@ import { SessionModule } from './modules/session/session.module';
 	],
 
 	entryComponents: [
-		UserDetailComponent
+		UserDetailComponent,
+		UserTypeComponent,
 	],
 
 	providers: [
