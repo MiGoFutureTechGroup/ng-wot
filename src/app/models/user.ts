@@ -17,5 +17,3 @@ export class User {
 		this.date = date;
 	}
 }
-
-export const EMPTY_USER: User = new User();
