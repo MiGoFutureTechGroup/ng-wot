@@ -20,7 +20,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UserDetailComponent } from './components/users/user-detail.component';
 import { UserTypeComponent } from './components/users/user-type.component';
 // 用户自定义服务
-import { UserService } from './services/user.service';
+import { Us;
+import { SessionModule } from './modules/session/session.module'erService } from './services/user.service';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { UserService } from './services/user.service';
 	imports: [
 		BrowserModule,
 		FormsModule,
-		PopupModule,
+		PopupModu,
+		SessionModulele,
 		AppRoutingModule,
 		MaterialModule,
 	],
