@@ -1,0 +1,27 @@
+.container {
+	padding: 90px;
+}
+
+.avatar {
+	$avatar-size: 125px;
+
+	border-radius: 50%;
+	width: $avatar-size;
+	height: $avatar-size;
+}
+
+.login-form {
+	margin-top: 60px;
+}
+
+mat-form-field {
+	display: block;
+	width: 40%;
+	min-width: 200px;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.mat-raised-button {
+	margin-top: 20px;
+}

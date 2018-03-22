@@ -38,10 +38,15 @@ import { SessionModule } from './modules/session/session.module';
 		UserTypeComponent
 	],
 	imports: [
+		// 浏览器
 		BrowserModule,
+		// 表单
 		FormsModule,
+		// 会话
 		SessionModule,
+		// 根路由
 		AppRoutingModule,
+		// Angular Material 界面
 		MaterialModule,
 	],
 
