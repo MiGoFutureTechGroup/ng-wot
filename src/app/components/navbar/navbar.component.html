@@ -1,50 +1,51 @@
 <nav>
-	<ul>
-		<li>
-			<a routerLink="/">首页</a>
-		</li>
-		<li>
-			<a routerLink="/users">用户管理</a>
-			<div>
-				<a class="cursor pointer" (click)="openNewUserDialog()">创建新用户</a>
-				<a class="cursor pointer" (click)="openNewUserTypeDialog()">创建新用户类型</a>
-			</div>
-		</li>
-		<li>
-			<a routerLink="/materials">料号管理</a>
-			<div>
-				<a class="cursor pointer" (click)="openNewMaterialDialog()">创建新料号</a>
-				<a class="cursor pointer" (click)="openNewMaterialTypeDialog()">创建新品目类型</a>
-			</div>
-		</li>
-		<li>
-			<a routerLink="/purchase">采购管理</a>
-			<div>
-				<a routerLink="/purchase/new/order">新建采购订单</a>
-			</div>
-		</li>
-		<li>
-			<a routerLink="/sales">销售管理</a>
-			<div>
-				<a routerLink="/sales/new/order">新建销售订单</a>
-			</div>
-		</li>
-		<li>
-			<a routerLink="/warehouse">库存管理</a>
-			<div>
-				<a class="cursor pointer" routerLink="/warehouse/input">入库登记</a>
-				<a class="cursor pointer" routerLink="/warehouse/output">出库登记</a>
-			</div>
-		</li>
-		<li>
-			<a routerLink="/manufacture">生产管理</a>
-			<div>
-				<a routerLink="/manufacture/new/plan">新建生产计划</a>
-			</div>
-		</li>
+  <ul>
+    <li>
+      <a routerLink="/">首页</a>
+    </li>
+    <li>
+      <a routerLink="/users">用户管理</a>
+      <div>
+        <a class="cursor pointer" (click)="openNewUserDialog()">创建新用户</a>
+        <a class="cursor pointer" (click)="openNewUserTypeDialog()">创建新用户类型</a>
+      </div>
+    </li>
+    <li>
+      <a routerLink="/materials">料号管理</a>
+      <div>
+        <a class="cursor pointer" (click)="openNewMaterialDialog()">创建新料号</a>
+        <a class="cursor pointer" (click)="openNewMaterialTypeDialog()">创建新品目类型</a>
+      </div>
+    </li>
+    <li>
+      <a routerLink="/purchase">采购管理</a>
+      <div>
+        <a routerLink="/purchase/new/quotation">新建报价单</a>
+        <a routerLink="/purchase/new/order">新建采购订单</a>
+      </div>
+    </li>
+    <li>
+      <a routerLink="/sales">销售管理</a>
+      <div>
+        <a routerLink="/sales/new/order">新建销售订单</a>
+      </div>
+    </li>
+    <li>
+      <a noop="/warehouse">库存管理</a>
+      <div>
+        <a class="cursor pointer" routerLink="/warehouse/input">入库登记</a>
+        <a class="cursor pointer" routerLink="/warehouse/output">出库登记</a>
+      </div>
+    </li>
+    <li>
+      <a routerLink="/manufacture">生产管理</a>
+      <div>
+        <a routerLink="/manufacture/new/plan">新建生产计划</a>
+      </div>
+    </li>
 
-		<li style="float: right">
-			<a routerLink="/login">登录</a>
-		</li>
-	</ul>
+    <li style="float: right">
+      <a routerLink="/login">登录</a>
+    </li>
+  </ul>
 </nav>
