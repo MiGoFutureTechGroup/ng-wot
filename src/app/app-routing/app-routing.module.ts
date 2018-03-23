@@ -10,6 +10,7 @@ import { MaterialsComponent } from '../components/materials/materials.component'
 import { WelcomeComponent } from '../components/welcome/welcome.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 import { WarehouseComponent } from '../components/warehouse/warehouse.component';
+import { QuotationComponent, PurchaseOrderComponent } from '../components/purchase/purchase.component';
 
 // 测试用导入
 import { LoginComponent } from '../modules/session/components/login/login.component';
@@ -28,6 +29,18 @@ const routes: Routes = [{
 		path: ':id',
 		component: MaterialsComponent
 	}]
+}, {
+  path: 'purchase',
+  children: [{
+    path: 'new',
+    children: [{
+      path: 'quotation',
+      component: QuotationComponent,
+    }, {
+      path: 'order',
+      component: PurchaseOrderComponent,
+    }]
+  }]
 }, {
 	path: 'warehouse',
 	//component: WarehouseComponent,
