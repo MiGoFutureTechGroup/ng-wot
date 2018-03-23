@@ -21,7 +21,9 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UserDetailComponent } from './components/users/user-detail.component';
 import { UserTypeComponent } from './components/users/user-type.component';
 import { WarehouseComponent } from './components/warehouse/warehouse.component';
-import { PurchaseComponent, QuotationComponent, PurchaseOrderComponent } from './components/purchase/purchase.component';
+import { PurchaseComponent } from './components/purchase/purchase.component';
+import { OrderComponent } from './components/purchase/order.component';
+import { QuotationComponent } from './components/purchase/quotation.component';
 
 // 用户自定义服务
 import { UserService } from './services/user.service';
@@ -42,9 +44,9 @@ import { SessionModule } from './modules/session/session.module';
     UserDetailComponent,
     UserTypeComponent,
     PurchaseComponent,
-    WarehouseComponent,
     QuotationComponent,
-    PurchaseOrderComponent,
+    OrderComponent,
+    WarehouseComponent,
   ],
   imports: [
     // 浏览器
