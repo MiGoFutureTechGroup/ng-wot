@@ -12,84 +12,57 @@
     <mat-card-subtitle>Outstockroom Registration</mat-card-subtitle>
   </mat-card-header>
 
-  <mat-card-content class="table-container mat-elevation-z8">
+  <mat-card-content class="card-container mat-elevation-z8">
 
-    <!-- Input -->
-    <mat-table #table1 [dataSource]="dataSource1">
+    <mat-list>
 
-      <!-- Provider Column -->
-      <ng-container matColumnDef="rcptDate">
-        <mat-header-cell *matHeaderCellDef> 收货日期 </mat-header-cell>
-        <mat-cell *matCellDef="let element">
+      <mat-list-item>
         <mat-form-field>
-          <input matInput tabindex="1" [matDatepicker]="picker" placeholder="请选择日期" [(ngModel)]="element.rcptDate" disabled>
+          <input matInput tabindex="1" [matDatepicker]="picker" placeholder="收货日期" [(ngModel)]="warehouseLogCache.rcptDate" disabled>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker
               touchUi="true"
               disabled="false">
           </mat-datepicker>
         </mat-form-field>
-        </mat-cell>
-      </ng-container>
+      </mat-list-item>
 
-      <!-- Provider Column -->
-      <ng-container matColumnDef="providerId">
-        <mat-header-cell *matHeaderCellDef> 供应商 </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <input matInput tabindex="2" [(ngModel)]="element.providerId">
-          </mat-form-field>
-        </mat-cell>
-      </ng-container>
+      <mat-list-item>
+        <mat-form-field>
+          <input matInput tabindex="2" [(ngModel)]="warehouseLogCache.providerId" placeholder="供应商">
+        </mat-form-field>
+      </mat-list-item>
 
-      <!-- P/N Column -->
-      <ng-container matColumnDef="partId">
-        <mat-header-cell *matHeaderCellDef> 料号 </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <input matInput tabindex="3" [(ngModel)]="element.partId">
-          </mat-form-field>
-        </mat-cell>
-      </ng-container>
+      <mat-list-item>
+        <mat-form-field>
+          <input matInput tabindex="3" [(ngModel)]="warehouseLogCache.partId" placeholder="料号">
+        </mat-form-field>
+      </mat-list-item>
 
-      <!-- Amount Column -->
-      <ng-container matColumnDef="amount">
-        <mat-header-cell *matHeaderCellDef> 数量 </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <input matInput tabindex="4" [(ngModel)]="element.amount">
-          </mat-form-field>
-        </mat-cell>
-      </ng-container>
+      <mat-list-item>
+        <mat-form-field>
+          <input matInput tabindex="4" [(ngModel)]="warehouseLogCache.amount" placeholder="数量">
+        </mat-form-field>
+      </mat-list-item>
 
-      <!-- Unit Column -->
-      <ng-container matColumnDef="unit">
-        <mat-header-cell *matHeaderCellDef> 单位 </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <mat-select tabindex="5" [(ngModel)]="element.unit">
-              <mat-option *ngFor="let unit of units" [value]="unit.id">
-                {{ unit.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-cell>
-      </ng-container>
+      <mat-list-item>
+        <mat-form-field>
+          <mat-select tabindex="5" [(ngModel)]="warehouseLogCache.unit" placeholder="单位">
+            <mat-option *ngFor="let unit of units" [value]="unit.id">
+              {{ unit.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-list-item>
 
-      <!-- Comment Column -->
-      <ng-container matColumnDef="comment">
-        <mat-header-cell *matHeaderCellDef> 备注 </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <mat-form-field>
-            <input matInput tabindex="6" [(ngModel)]="element.comment">
-          </mat-form-field>
-        </mat-cell>
-      </ng-container>
+      <mat-list-item>
+        <mat-form-field>
+          <input matInput tabindex="6" [(ngModel)]="warehouseLogCache.comment" placeholder="备注">
+        </mat-form-field>
+      </mat-list-item>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns1;">
-      </mat-row>
-    </mat-table>
+    </mat-list>
+
   </mat-card-content>
 
   <mat-card-content class="table-container mat-elevation-z8">
@@ -101,7 +74,7 @@
       </mat-form-field>
     </div>
 
-    <mat-table #table2 [dataSource]="dataSource2" matSort>
+    <mat-table #table [dataSource]="dataSource" matSort>
 
       <!-- Checkbox Column -->
       <ng-container matColumnDef="select">
