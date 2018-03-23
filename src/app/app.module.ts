@@ -21,6 +21,9 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UserDetailComponent } from './components/users/user-detail.component';
 import { UserTypeComponent } from './components/users/user-type.component';
 import { WarehouseComponent } from './components/warehouse/warehouse.component';
+import { PurchaseComponent } from './components/purchase/purchase.component';
+import { OrderComponent } from './components/purchase/order.component';
+import { QuotationComponent } from './components/purchase/quotation.component';
 
 // 用户自定义服务
 import { UserService } from './services/user.service';
@@ -28,47 +31,50 @@ import { SessionModule } from './modules/session/session.module';
 
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		MaterialsComponent,
-		MaterialDetailComponent,
-		HomeComponent,
-		NavbarComponent,
-		PageNotFoundComponent,
-		FooterComponent,
-		WelcomeComponent,
-		UsersComponent,
-		UserDetailComponent,
-		UserTypeComponent,
-		WarehouseComponent,
-	],
-	imports: [
-		// 浏览器
-		BrowserModule,
-		
-		// 表单
-		FormsModule,
+  declarations: [
+    AppComponent,
+    MaterialsComponent,
+    MaterialDetailComponent,
+    HomeComponent,
+    NavbarComponent,
+    PageNotFoundComponent,
+    FooterComponent,
+    WelcomeComponent,
+    UsersComponent,
+    UserDetailComponent,
+    UserTypeComponent,
+    PurchaseComponent,
+    QuotationComponent,
+    OrderComponent,
+    WarehouseComponent,
+  ],
+  imports: [
+    // 浏览器
+    BrowserModule,
 
-		// 会话
-		SessionModule,
+    // 表单
+    FormsModule,
 
-		// 根路由
-		AppRoutingModule,
+    // 会话
+    SessionModule,
 
-		// Angular Material 界面
-		MaterialModule,
-	],
+    // 根路由
+    AppRoutingModule,
 
-	entryComponents: [
-		UserDetailComponent,
-		UserTypeComponent,
-	],
+    // Angular Material 界面
+    MaterialModule,
+  ],
 
-	providers: [
-		UserService,
-	],
-	bootstrap: [
-		AppComponent,
-	]
+  entryComponents: [
+    UserDetailComponent,
+    UserTypeComponent,
+  ],
+
+  providers: [
+    UserService,
+  ],
+  bootstrap: [
+    AppComponent,
+  ]
 })
 export class AppModule { }
