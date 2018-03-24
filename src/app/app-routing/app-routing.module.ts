@@ -10,7 +10,8 @@ import { MaterialsComponent } from '../components/materials/materials.component'
 import { WelcomeComponent } from '../components/welcome/welcome.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 import { WarehouseComponent } from '../components/warehouse/warehouse.component';
-import { QuotationComponent, PurchaseOrderComponent } from '../components/purchase/purchase.component';
+import { QuotationComponent } from '../components/purchase/quotation.component';
+import { OrderComponent } from '../components/purchase/order.component';
 
 // 测试用导入
 import { LoginComponent } from '../modules/session/components/login/login.component';
@@ -38,7 +39,7 @@ const routes: Routes = [{
       component: QuotationComponent,
     }, {
       path: 'order',
-      component: PurchaseOrderComponent,
+      component: OrderComponent,
     }]
   }]
 }, {
