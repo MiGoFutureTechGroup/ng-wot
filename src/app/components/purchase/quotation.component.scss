@@ -1,0 +1,35 @@
+@import "../../../assets/variables";
+@import "../../../assets/table";
+
+mat-form-field + mat-form-field, mat-checkbox + mat-checkbox, mat-radio-button + mat-radio-button, mat-radio-group + mat-checkbox {
+  margin-left: 20px;
+}
+
+section {
+  display: inline-block;
+}
+
+section + section {
+  margin-left: 20px;
+}
+
+input[type="number"] {
+  text-align: right;
+}
+
+/////////////////////////////////////////////////
+// 去掉 input[type="number"] 浏览器预设样式
+/////////////////////////////////////////////////
+// Chrome
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none !important;
+}
+// Firefox
+input[type="number"] {
+  -moz-appearance:textfield;
+}
+
+input.uppercase {
+  text-transform: uppercase;
+}
