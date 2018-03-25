@@ -5,12 +5,14 @@ mat-form-field + mat-form-field, mat-checkbox + mat-checkbox, mat-radio-button +
   margin-left: 20px;
 }
 
-section {
-  display: inline-block;
-}
+mat-card-content > {
+  section {
+    display: inline-block;
+  }
 
-section + section {
-  margin-left: 20px;
+  section + section {
+    margin-left: 20px;
+  }
 }
 
 input[type="number"] {
