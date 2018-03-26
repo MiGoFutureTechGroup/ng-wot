@@ -7,6 +7,10 @@ import { Component, OnInit, Inject, Input } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  code: string;
+  username: string;
+  password: string;
+
 	constructor() { }
 
 	ngOnInit() {
