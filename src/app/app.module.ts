@@ -3,11 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-
 // 用户自定义模块
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MaterialModule } from './modules/material.module';
-
 // 用户自定义组件
 import { AppComponent } from './app.component';
 import { MaterialsComponent } from './components/materials/materials.component';
@@ -24,11 +22,10 @@ import { WarehouseComponent } from './components/warehouse/warehouse.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { OrderComponent } from './components/purchase/order.component';
 import { QuotationComponent } from './components/purchase/quotation.component';
-
+import { CompanyComponent } from './components/company/company.component';
 // 用户自定义服务
 import { UserService } from './services/user.service';
 import { SessionModule } from './modules/session/session.module';
-
 
 @NgModule({
   declarations: [
@@ -46,7 +43,9 @@ import { SessionModule } from './modules/session/session.module';
     PurchaseComponent,
     QuotationComponent,
     OrderComponent,
+    CompanyComponent,
     WarehouseComponent,
+
   ],
   imports: [
     // 浏览器
