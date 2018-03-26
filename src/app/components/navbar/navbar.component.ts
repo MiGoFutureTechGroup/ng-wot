@@ -5,8 +5,13 @@ import { Location } from '@angular/common';
 
 import { User } from '../../models/user';
 import { UserType } from '../../models/user-type';
+import { Material } from '../../models/material';
+import { MaterialType } from '../../models/material-type';
 import { UserDetailComponent } from '../users/user-detail.component';
 import { UserTypeComponent } from '../users/user-type.component';
+import { MaterialDetailComponent } from '../materials/material-detail.component';
+import { MaterialTypeComponent } from '../materials/material-type.component';
+
 
 const DIALOG_WIDTH: string = '250px';
 const DIALOG_HEIGHT: string = '';
@@ -20,6 +25,8 @@ export class NavbarComponent implements OnInit {
 
 	selectedUser: User;
 	selectedUserType: UserType;
+  selectedMaterial: Material;
+  selectedMaterialType: MaterialType;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -65,8 +72,36 @@ export class NavbarComponent implements OnInit {
 	}
 
 	openNewMaterialDialog(): void {
+    if (!this.selectedMaterial) {
+      this.selectedMaterial = new Material();
+    }
+    let dialogRef = this.dialog.open(MaterialDetailComponent, {
+      width: DIALOG_WIDTH,
+      height: DIALOG_HEIGHT,
+      data: {
+        type: this.selectedMaterial
+      },
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('用户类型修订对话框 已关闭！');
+      // TODO 上传信息改动
+    });
 	}
 
 	openNewMaterialTypeDialog(): void {
+    if (!this.selectedMaterialType) {
+      this.selectedMaterialType = new MaterialType();
+    }
+    let dialogRef = this.dialog.open(MaterialTypeComponent, {
+      width: DIALOG_WIDTH,
+      height: DIALOG_HEIGHT,
+      data: {
+        type: this.selectedMaterialType
+      },
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('用户类型修订对话框 已关闭！');
+      // TODO 上传信息改动
+    });
 	}
 }

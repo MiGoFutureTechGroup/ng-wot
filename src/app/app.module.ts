@@ -68,6 +68,8 @@ import { SessionModule } from './modules/session/session.module';
   entryComponents: [
     UserDetailComponent,
     UserTypeComponent,
+    MaterialDetailComponent,
+    MaterialTypeComponent,
   ],
 
   providers: [
