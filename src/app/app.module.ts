@@ -23,6 +23,7 @@ import { PurchaseComponent } from './components/purchase/purchase.component';
 import { OrderComponent } from './components/purchase/order.component';
 import { QuotationComponent } from './components/purchase/quotation.component';
 import { CompanyComponent } from './components/company/company.component';
+import { MaterialTypeComponent } from './components/materials/material-type.component';
 // 用户自定义服务
 import { UserService } from './services/user.service';
 import { SessionModule } from './modules/session/session.module';
@@ -44,8 +45,8 @@ import { SessionModule } from './modules/session/session.module';
     QuotationComponent,
     OrderComponent,
     CompanyComponent,
+    MaterialTypeComponent,
     WarehouseComponent,
-
   ],
   imports: [
     // 浏览器
