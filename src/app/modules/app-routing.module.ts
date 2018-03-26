@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from '../components/page-not-found/page-not-fou
 import { WarehouseComponent } from '../components/warehouse/warehouse.component';
 import { QuotationComponent } from '../components/purchase/quotation.component';
 import { OrderComponent } from '../components/purchase/order.component';
+import { CompanyComponent } from '../components/company/company.component';
 
 // 测试用导入
 import { LoginComponent } from '../modules/session/components/login/login.component';
@@ -40,6 +41,12 @@ const routes: Routes = [{
     }, {
       path: 'order',
       component: OrderComponent,
+    }]
+  }, {
+    path: 'add',
+    children: [{
+      path: 'provider',
+      component: CompanyComponent,
     }]
   }]
 }, {
