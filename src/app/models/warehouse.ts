@@ -1,29 +1,30 @@
-export class WarehouseLog {
+import { Creation } from './creation';
+import { Company } from './company';
 
-	////////////////////////////
-	// 隐藏数据
-	////////////////////////////
+export class Warehouse {
+  // 所属公司
+  owner: Company;
+  // 仓库名称
+  name: string;
+}
 
-	// 到货日期
-	rcptDate: string = '';
-	// 登记日期
-	rgstDate: string = '';
-	// 登记用户
-	userId: string = '';
+class AbstractLog extends Creation {
+  // 操作日期
+  date: Date;
+  // 所属仓库
+  warehouse: Warehouse;
+  // 仓库料号
+  partId: string;
+  // 数量
+  amount: number;
+  // 单位
+  unit: string;
+  // 备注
+  comment: string;
+}
 
-	////////////////////////////
-	// 可见数据
-	////////////////////////////
+export class InstockLog extends AbstractLog {
+}
 
-	// 供应商
-	providerId: string;
-	// 仓库料号
-	partId: string;
-	// 数量
-	amount: number;
-	// 单位
-	unit: string;
-	// 备注
-	comment: string;
-
+export class OutstockLog extends AbstractLog {
 }
