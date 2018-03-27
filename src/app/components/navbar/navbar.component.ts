@@ -79,11 +79,11 @@ export class NavbarComponent implements OnInit {
       width: DIALOG_WIDTH,
       height: DIALOG_HEIGHT,
       data: {
-        type: this.selectedMaterial
+        material: this.selectedMaterial
       },
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('用户类型修订对话框 已关闭！');
+      console.log('料号信息修订对话框 已关闭！');
       // TODO 上传信息改动
     });
 	}
@@ -96,11 +96,11 @@ export class NavbarComponent implements OnInit {
       width: DIALOG_WIDTH,
       height: DIALOG_HEIGHT,
       data: {
-        type: this.selectedMaterialType
+        materialType: this.selectedMaterialType
       },
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('用户类型修订对话框 已关闭！');
+      console.log('料号类型修订对话框 已关闭！');
       // TODO 上传信息改动
     });
 	}

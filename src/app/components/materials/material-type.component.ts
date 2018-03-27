@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
+import { MaterialType } from '../../models/material-type';
 
 @Component({
   selector: 'app-material-type',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialTypeComponent implements OnInit {
 
-  constructor() { }
+  @Input() materialType: MaterialType;
+
+  constructor(
+    public dialogRef: MatDialogRef<MaterialTypeComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
 
   ngOnInit() {
+  }
+
+  onCancel() {
+    this.dialogRef.close();
   }
 
 }

@@ -1,3 +1,40 @@
-<p>
-  material-type works!
-</p>
+<div *ngIf="data">
+  <div *ngIf="data.materialType">
+
+    <h1 mat-dialog-title>料号类型</h1>
+
+    <div mat-dialog-content class="center">
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="1"
+            [(ngModel)]="data.materialType.id"
+            placeholder="料号类型 ID">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="2"
+            [(ngModel)]="data.materialType.parent"
+            placeholder="料号类型父集">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="3"
+            [(ngModel)]="data.materialType.name"
+            placeholder="料号类型名称">
+      </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions class="center">
+      <button mat-button (click)="onCancel()">取消</button>
+      <button mat-button [mat-dialog-close]="data.materialType.id" cdkFocusInitial>确定</button>
+    </div>
+
+  </div>
+</div>
