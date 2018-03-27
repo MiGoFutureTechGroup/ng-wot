@@ -1,3 +1,32 @@
-<p>
-  user-type works!
-</p>
+<div *ngIf="data">
+  <div *ngIf="data.type">
+
+    <h1 mat-dialog-title>用户类型</h1>
+
+    <div mat-dialog-content class="center">
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="1"
+            [(ngModel)]="data.type.id"
+            placeholder="用户类型 ID">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="2"
+            [(ngModel)]="data.type.name"
+            placeholder="用户类型名称">
+      </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions class="center">
+      <button mat-button (click)="onCancel()">取消</button>
+      <button mat-button [mat-dialog-close]="data.type.id" cdkFocusInitial>确定</button>
+    </div>
+
+  </div>
+</div>

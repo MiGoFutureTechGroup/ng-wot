@@ -104,4 +104,34 @@ export class NavbarComponent implements OnInit {
       // TODO 上传信息改动
     });
 	}
+
+  openDialog(
+      fieldName: string,
+      dialogModelName: string,
+      dialogModelCtorParams: undefined | Array<any>,
+      dialogComponentName: string,
+      dialogWidth: string = DIALOG_WIDTH,
+      dialogHeight: string = DIALOG_HEIGHT,
+      dialogConfigDataKey: string,
+      callback: undefined,
+  ): void {
+
+    if (!this[fieldName]) {
+      let obj = this[fieldName] = Object.create(window[dialogModelName].prototype);
+      obj.constructor.apply(obj, dialogModelCtorParams);
+    }
+
+    let dialogConfig = {
+      width: dialogWidth,
+      height: dialogHeight,
+      data: { },
+    };
+    dialogConfig.data[dialogConfigDataKey] = this[fieldName];
+
+    let dialogRef = this.dialog.open(window[dialogComponentName], dialogConfig);
+
+    if (dialogRef && callback) {
+      dialogRef.afterClosed().subscribe(callback);
+    }
+  }
 }
