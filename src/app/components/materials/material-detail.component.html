@@ -1,3 +1,61 @@
-<p>
-  material-detail works!
-</p>
+<div *ngIf="data">
+  <div *ngIf="data.material">
+
+    <h1 mat-dialog-title>新建料号</h1>
+
+    <div mat-dialog-content class="center">
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="1"
+            [(ngModel)]="data.material.id"
+            name="material.id"
+            placeholder="料号 ID">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="2"
+            [(ngModel)]="data.material.name"
+            name="material.name"
+            placeholder="料号">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="3"
+            [(ngModel)]="data.material.gauge"
+            name="material.gauge"
+            placeholder="规格" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="4"
+            [(ngModel)]="data.material.property"
+            name="material.property"
+            placeholder="性能参数" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="5"
+            [(ngModel)]="data.material.guise"
+            name="material.guise"
+            placeholder="外观特征" />
+      </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions class="center">
+      <button mat-button (click)="onCancel()">取消</button>
+      <button mat-button [mat-dialog-close]="data.material.id" cdkFocusInitial>确定</button>
+    </div>
+
+  </div>
+</div>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
+import { Material } from '../../models/material';
 
 @Component({
 	selector: 'app-material-detail',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialDetailComponent implements OnInit {
 
-	constructor() { }
+  @Input() material: Material;
 
-	ngOnInit() {
-	}
+  constructor(
+    public dialogRef: MatDialogRef<MaterialDetailComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
+
+  ngOnInit() {
+  }
+
+  onCancel() {
+    this.dialogRef.close();
+  }
 
 }
