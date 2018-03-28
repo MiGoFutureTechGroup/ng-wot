@@ -13,6 +13,7 @@ import { WarehouseComponent } from '../components/warehouse/warehouse.component'
 import { QuotationComponent } from '../components/purchase/quotation.component';
 import { OrderComponent } from '../components/purchase/order.component';
 import { CompanyComponent } from '../components/company/company.component';
+import { MaterialLinkComponent } from '../components/materials/material-link/material-link.component';
 
 // 测试用导入
 import { LoginComponent } from '../modules/session/components/login/login.component';
@@ -30,7 +31,10 @@ const routes: Routes = [{
 	children: [{
 		path: ':id',
 		component: MaterialsComponent
-	}]
+	}, {
+    path: 'link',
+    component: MaterialLinkComponent,
+  }]
 }, {
   path: 'purchase',
   children: [{
