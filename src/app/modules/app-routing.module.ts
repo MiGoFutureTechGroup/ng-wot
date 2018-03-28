@@ -19,75 +19,98 @@ import { MaterialLinkComponent } from '../components/materials/material-link/mat
 import { LoginComponent } from '../modules/session/components/login/login.component';
 
 
-const routes: Routes = [{
-	path: 'home',
-	component: HomeComponent
-}, {
-	path: 'users',
-	component: UsersComponent
-}, {
-	path: 'materials',
-  pathMatch: 'full',
-	component: MaterialsComponent,
-	children: [{
-		path: ':id',
-		component: MaterialsComponent
-	}, {
-    path: 'link',
-    component: MaterialLinkComponent,
-  }]
-}, {
-  path: 'purchase',
-  pathMatch: 'full',
-  children: [{
-    path: 'new',
+const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'users',
+    component: UsersComponent
+  },
+  {
+    path: 'materials',
     pathMatch: 'full',
-    children: [{
-      path: 'quotation',
-      component: QuotationComponent,
-    }, {
-      path: 'order',
-      component: OrderComponent,
-    }]
-  }, {
-    path: 'add',
+    component: MaterialsComponent,
+    children: [
+      {
+        path: ':id',
+        component: MaterialsComponent
+      },
+      {
+        path: 'link',
+        component: MaterialLinkComponent,
+      }
+    ]
+  },
+  {
+    path: 'purchase',
     pathMatch: 'full',
-    children: [{
-      path: 'provider',
-      component: CompanyComponent,
-    }]
-  }]
-}, {
-	path: 'warehouse',
-  pathMatch: 'full',
-	//component: WarehouseComponent,
-	children: [{
-		path: 'input',
-		component: WarehouseComponent,
-	}, {
-		path: 'output',
-		component: WarehouseComponent,
-	}]
-}, {
-	path: 'login',
-	component: LoginComponent,
-}, {
-	path: '',
-	component: WelcomeComponent,
-	pathMatch: 'full'
-}, {
-	path: '**',
-	component: PageNotFoundComponent
-}]
+    children: [
+      {
+        path: 'new',
+        pathMatch: 'full',
+        children: [
+          {
+            path: 'quotation',
+            component: QuotationComponent,
+          },
+          {
+            path: 'order',
+            component: OrderComponent,
+          }
+        ]
+      },
+      {
+        path: 'add',
+        pathMatch: 'full',
+        children: [
+          {
+            path: 'provider',
+            component: CompanyComponent,
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: 'warehouse',
+    pathMatch: 'full',
+    //component: WarehouseComponent,
+    children: [
+      {
+        path: 'input',
+        component: WarehouseComponent,
+      },
+      {
+        path: 'output',
+        component: WarehouseComponent,
+      }
+    ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: '',
+    component: WelcomeComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
+]
 
 @NgModule({
-	imports: [
-		CommonModule,
-		RouterModule.forRoot(routes)
-	],
-	exports: [
-		RouterModule
-	],
-	declarations: []
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ],
+  declarations: []
 })
 export class AppRoutingModule { }
