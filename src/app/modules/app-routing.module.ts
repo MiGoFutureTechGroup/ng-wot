@@ -14,6 +14,7 @@ import { QuotationComponent } from '../components/purchase/quotation.component';
 import { OrderComponent } from '../components/purchase/order.component';
 import { CompanyComponent } from '../components/company/company.component';
 import { MaterialLinkComponent } from '../components/materials/material-link.component';
+import { MaterialTableComponent } from '../components/materials/material-table.component';
 
 // 测试用导入
 import { LoginComponent } from '../modules/session/components/login/login.component';
@@ -31,16 +32,16 @@ const routes: Routes = [
   {
     path: 'materials',
     component: MaterialsComponent,
-    children: [
-      {
-        path: ':id',
-        component: MaterialsComponent
-      },
-      {
-        path: 'link',
-        component: MaterialLinkComponent,
-      }
-    ]
+    children: [{
+      path: 'link',
+      component: MaterialLinkComponent,
+    }, {
+      path: ':id',
+      component: MaterialsComponent
+    }, {
+      path: '',
+      component: MaterialTableComponent,
+    }]
   },
   {
     path: 'purchase',
