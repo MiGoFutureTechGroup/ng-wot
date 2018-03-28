@@ -24,7 +24,7 @@ import { OrderComponent } from './components/purchase/order.component';
 import { QuotationComponent } from './components/purchase/quotation.component';
 import { CompanyComponent } from './components/company/company.component';
 import { MaterialTypeComponent } from './components/materials/material-type.component';
-import { MaterialLinkComponent } from './components/materials/material-link/material-link.component';
+import { MaterialLinkComponent } from './components/materials/material-link.component';
 // 用户自定义服务
 import { UserService } from './services/user.service';
 import { SessionModule } from './modules/session/session.module';
