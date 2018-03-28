@@ -25,6 +25,7 @@ import { QuotationComponent } from './components/purchase/quotation.component';
 import { CompanyComponent } from './components/company/company.component';
 import { MaterialTypeComponent } from './components/materials/material-type.component';
 import { MaterialLinkComponent } from './components/materials/material-link.component';
+import { MaterialTableComponent } from './components/materials/material-table.component';
 // Services
 import { UserService } from './services/user.service';
 import { SessionModule } from './modules/session/session.module';
@@ -49,6 +50,7 @@ import { SessionModule } from './modules/session/session.module';
     MaterialTypeComponent,
     WarehouseComponent,
     MaterialLinkComponent,
+    MaterialTableComponent,
   ],
   imports: [
     BrowserModule,
