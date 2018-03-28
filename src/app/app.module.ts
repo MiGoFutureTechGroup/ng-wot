@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-// 用户自定义模块
+// Modules
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MaterialModule } from './modules/material.module';
-// 用户自定义组件
+// Components
 import { AppComponent } from './app.component';
 import { MaterialsComponent } from './components/materials/materials.component';
 import { MaterialDetailComponent } from './components/materials/material-detail.component';
@@ -25,7 +25,7 @@ import { QuotationComponent } from './components/purchase/quotation.component';
 import { CompanyComponent } from './components/company/company.component';
 import { MaterialTypeComponent } from './components/materials/material-type.component';
 import { MaterialLinkComponent } from './components/materials/material-link.component';
-// 用户自定义服务
+// Services
 import { UserService } from './services/user.service';
 import { SessionModule } from './modules/session/session.module';
 
@@ -51,19 +51,10 @@ import { SessionModule } from './modules/session/session.module';
     MaterialLinkComponent,
   ],
   imports: [
-    // 浏览器
     BrowserModule,
-
-    // 表单
     FormsModule,
-
-    // 会话
     SessionModule,
-
-    // 根路由
     AppRoutingModule,
-
-    // Angular Material 界面
     MaterialModule,
   ],
 
