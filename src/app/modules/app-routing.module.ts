@@ -27,6 +27,7 @@ const routes: Routes = [{
 	component: UsersComponent
 }, {
 	path: 'materials',
+  pathMatch: 'full',
 	component: MaterialsComponent,
 	children: [{
 		path: ':id',
@@ -37,8 +38,10 @@ const routes: Routes = [{
   }]
 }, {
   path: 'purchase',
+  pathMatch: 'full',
   children: [{
     path: 'new',
+    pathMatch: 'full',
     children: [{
       path: 'quotation',
       component: QuotationComponent,
@@ -48,6 +51,7 @@ const routes: Routes = [{
     }]
   }, {
     path: 'add',
+    pathMatch: 'full',
     children: [{
       path: 'provider',
       component: CompanyComponent,
@@ -55,6 +59,7 @@ const routes: Routes = [{
   }]
 }, {
 	path: 'warehouse',
+  pathMatch: 'full',
 	//component: WarehouseComponent,
 	children: [{
 		path: 'input',
