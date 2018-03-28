@@ -29,6 +29,8 @@ import { MaterialTableComponent } from './components/materials/material-table.co
 // Services
 import { UserService } from './services/user.service';
 import { SessionModule } from './modules/session/session.module';
+import { MaterialDetailResolverService } from './components/materials/services/material-detail-resolver.service';
+import { MaterialService } from './services/material.service';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,8 @@ import { SessionModule } from './modules/session/session.module';
 
   providers: [
     UserService,
+    MaterialDetailResolverService,
+    MaterialService,
   ],
   bootstrap: [
     AppComponent,
