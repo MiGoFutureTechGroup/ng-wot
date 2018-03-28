@@ -13,7 +13,7 @@ import { WarehouseComponent } from '../components/warehouse/warehouse.component'
 import { QuotationComponent } from '../components/purchase/quotation.component';
 import { OrderComponent } from '../components/purchase/order.component';
 import { CompanyComponent } from '../components/company/company.component';
-import { MaterialLinkComponent } from '../components/materials/material-link/material-link.component';
+import { MaterialLinkComponent } from '../components/materials/material-link.component';
 
 // 测试用导入
 import { LoginComponent } from '../modules/session/components/login/login.component';
@@ -30,7 +30,6 @@ const routes: Routes = [
   },
   {
     path: 'materials',
-    pathMatch: 'full',
     component: MaterialsComponent,
     children: [
       {
@@ -45,11 +44,9 @@ const routes: Routes = [
   },
   {
     path: 'purchase',
-    pathMatch: 'full',
     children: [
       {
         path: 'new',
-        pathMatch: 'full',
         children: [
           {
             path: 'quotation',
@@ -63,7 +60,6 @@ const routes: Routes = [
       },
       {
         path: 'add',
-        pathMatch: 'full',
         children: [
           {
             path: 'provider',
@@ -75,7 +71,6 @@ const routes: Routes = [
   },
   {
     path: 'warehouse',
-    pathMatch: 'full',
     //component: WarehouseComponent,
     children: [
       {
