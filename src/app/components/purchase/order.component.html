@@ -1,3 +1,86 @@
-<p>
-  order works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>新建采购订单</h1>
+    </mat-card-title>
+    <mat-card-subtitle>New Purchase Order</mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- 采购订单 元信息 -->
+  <mat-card-content class="table-container mat-elevation-z8">
+
+    <section>
+
+      <h2>供应商信息</h2>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="101"
+            placeholder="供应商名称" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="102"
+            placeholder="联系人" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="103"
+            placeholder="联系电话" />
+      </mat-form-field>
+
+    </section>
+
+    <section>
+
+      <h2>订单信息</h2>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="201"
+            placeholder="订单编码"
+            disabled="" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="202"
+            placeholder="订单日期"
+            disabled="" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="203"
+            placeholder="负责人"
+            disabled="" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            type="text"
+            tabindex="204"
+            placeholder="联系电话"
+            disabled="" />
+      </mat-form-field>
+
+    </section>
+
+  </mat-card-content>
+
+  <!-- 采购订单 -->
+  <mat-card-content class="table-container mat-elevation-z8">
+
+    <section>
+    </section>
+
+  </mat-card-content>
+</mat-card>
