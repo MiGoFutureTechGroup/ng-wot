@@ -1,18 +1,14 @@
 @import "../../../assets/variables";
 
-mat-form-field + mat-form-field,
-mat-checkbox + mat-checkbox,
-mat-radio-button + mat-radio-button,
-mat-radio-group + mat-checkbox {
+mat-form-field,
+mat-checkbox,
+mat-radio-button {
   margin-left: 20px;
 }
 
 mat-card-content > {
   section {
     display: inline-block;
-  }
-
-  section + section {
     margin-left: 20px;
   }
 }
