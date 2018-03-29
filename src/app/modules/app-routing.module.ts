@@ -11,7 +11,7 @@ import { WelcomeComponent } from '../components/welcome/welcome.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 import { WarehouseComponent } from '../components/warehouse/warehouse.component';
 import { QuotationComponent } from '../components/purchase/quotation.component';
-import { OrderComponent } from '../components/purchase/order.component';
+import { OrderComponent as PurchaseOrderComponent } from '../components/purchase/order.component';
 import { CompanyComponent } from '../components/company/company.component';
 import { MaterialLinkComponent } from '../components/materials/material-link.component';
 import { MaterialTableComponent } from '../components/materials/material-table.component';
@@ -52,7 +52,7 @@ const routes: Routes = [
           },
           {
             path: 'order',
-            component: OrderComponent,
+            component: PurchaseOrderComponent,
           }
         ]
       },

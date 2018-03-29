@@ -20,7 +20,7 @@ import { UserDetailComponent } from './components/users/user-detail.component';
 import { UserTypeComponent } from './components/users/user-type.component';
 import { WarehouseComponent } from './components/warehouse/warehouse.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
-import { OrderComponent } from './components/purchase/order.component';
+import { OrderComponent as PurchaseOrderComponent } from './components/purchase/order.component';
 import { QuotationComponent } from './components/purchase/quotation.component';
 import { CompanyComponent } from './components/company/company.component';
 import { MaterialTypeComponent } from './components/materials/material-type.component';
@@ -47,7 +47,7 @@ import { MaterialService } from './services/material.service';
     UserTypeComponent,
     PurchaseComponent,
     QuotationComponent,
-    OrderComponent,
+    PurchaseOrderComponent,
     CompanyComponent,
     MaterialTypeComponent,
     WarehouseComponent,
