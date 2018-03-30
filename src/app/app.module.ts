@@ -31,6 +31,7 @@ import { UserService } from './services/user.service';
 import { SessionModule } from './modules/session/session.module';
 import { MaterialDetailResolverService } from './components/materials/services/material-detail-resolver.service';
 import { MaterialService } from './services/material.service';
+import { CompanyService } from './services/company.service';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { MaterialService } from './services/material.service';
     UserService,
     MaterialDetailResolverService,
     MaterialService,
+    CompanyService,
   ],
   bootstrap: [
     AppComponent,
