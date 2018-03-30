@@ -25,28 +25,39 @@
       </mat-cell>
     </ng-container>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>分类</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    <ng-container matColumnDef="partId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>料号</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.partId}} </mat-cell>
     </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    <ng-container matColumnDef="gauge">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>规格</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.gauge}} </mat-cell>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    <ng-container matColumnDef="guise">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>外观特征</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.guise}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="property">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>性能参数</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.property}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="design">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>设计图纸</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.design}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="photo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>实物照片</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.photo}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
