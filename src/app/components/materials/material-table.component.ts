@@ -33,19 +33,18 @@ export class MaterialTableComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
-  /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
     return numSelected === numRows;
   }
 
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle() {
     this.isAllSelected() ?
         this.selection.clear() :
         this.dataSource.data.forEach(row => this.selection.select(row));
   }
+
 }
 
 const ELEMENT_DATA: Material[] = [

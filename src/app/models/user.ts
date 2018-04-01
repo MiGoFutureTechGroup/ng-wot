@@ -15,7 +15,7 @@ export class User {
 
   // 联系方式
   // QQ
-  qq: number;
+  qq: string;
   // 手机号码
   phoneNumber: string;
   // 座机号码
