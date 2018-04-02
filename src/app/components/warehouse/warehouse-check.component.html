@@ -1,3 +1,67 @@
-<p>
-  warehouse-check works!
-</p>
+<mat-card-content class="table-container mat-elevation-z8">
+  <h2>盘点库存</h2>
+  <span>Check Inventory</span>
+
+  <mat-list>
+
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput
+            tabindex="-1"
+            [(ngModel)]="warehouseLogCache.date"
+            disabled=""
+            hidden=""
+            placeholder="盘存日期" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            tabindex="-1"
+            [(ngModel)]="warehouseLogCache.user"
+            disabled=""
+            hidden=""
+            placeholder="盘存人" />
+      </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput
+            tabindex="101"
+            [(ngModel)]="warehouseLogCache.partId"
+            placeholder="料号" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+            tabindex="102"
+            [(ngModel)]="warehouseLogCache.amount"
+            placeholder="数量" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select
+            tabindex="103"
+            [(ngModel)]="warehouseLogCache.unit"
+            placeholder="单位">
+          <mat-option
+              *ngFor="let unit of units"
+              [value]="unit.id">
+            {{ unit.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-list-item>
+
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput
+            tabindex="104"
+            [(ngModel)]="warehouseLogCache.comment"
+            placeholder="备注" />
+      </mat-form-field>
+    </mat-list-item>
+
+  </mat-list>
+
+</mat-card-content>
