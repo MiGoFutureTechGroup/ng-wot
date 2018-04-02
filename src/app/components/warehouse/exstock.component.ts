@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Warehouse, InstockLog } from '../../models/warehouse';
+import { Warehouse, ExstockLog } from '../../models/warehouse';
 import { User } from '../../models/user';
 
 @Component({
@@ -13,7 +13,7 @@ export class ExstockComponent implements OnInit {
     {id: 1, name: 'pcs'},
     {id: 2, name: 'kpcs'},
   ];
-  warehouseLogCache: InstockLog = new InstockLog();
+  warehouseLogCache: ExstockLog = new ExstockLog();
 
   constructor() { }
 
