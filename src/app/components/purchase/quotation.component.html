@@ -14,36 +14,74 @@
 
       <mat-list-item>
         <mat-form-field>
-          <input matInput tabindex="101" [(ngModel)]="quotationGroupLog.providerId" placeholder="供应商名称" required="">
+          <input matInput
+              tabindex="101"
+              [(ngModel)]="quotationGroupLog.providerId"
+              placeholder="供应商名称"
+              required="" />
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput tabindex="102" [matDatepicker]="picker" [(ngModel)]="quotationGroupLog.date" placeholder="报价日期" required="">
+          <input matInput
+              tabindex="102"
+              [matDatepicker]="picker"
+              [(ngModel)]="quotationGroupLog.date"
+              placeholder="报价日期"
+              required="" />
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field>
-          <mat-select [(ngModel)]="quotationGroupLog.currency" name="currency" placeholder="币种" required="">
-            <mat-option *ngFor="let currency of currencyList" [value]="currency.value">
+          <mat-select
+              [(ngModel)]="quotationGroupLog.currency"
+              name="currency"
+              placeholder="币种"
+              required="">
+            <mat-option
+                *ngFor="let currency of currencyList"
+                [value]="currency.value">
               {{ currency.viewValue }}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput tabindex="104" [(ngModel)]="quotationGroupLog.bidder" placeholder="报价人">
+          <input matInput
+              tabindex="104"
+              [(ngModel)]="quotationGroupLog.bidder"
+              placeholder="报价人" />
         </mat-form-field>
       </mat-list-item>
 
       <mat-list-item>
         <mat-radio-group [(ngModel)]="quotationGroupLog.termsofpayment.deadline">
-          <mat-radio-button value="15">月结15天</mat-radio-button>
-          <mat-radio-button value="30" checked>月结30天</mat-radio-button>
-          <mat-radio-button value="60">月结60天</mat-radio-button>
-          <mat-radio-button value="0">
+          <mat-radio-button
+              [checked]="quotationGroupLog.termsofpayment.deadline === 15"
+              value="15">
+            月结15天
+          </mat-radio-button>
+          <mat-radio-button
+              checked
+              [checked]="quotationGroupLog.termsofpayment.deadline === 30"
+              value="30">
+            月结30天
+          </mat-radio-button>
+          <mat-radio-button
+              [checked]="quotationGroupLog.termsofpayment.deadline === 60"
+              value="60">
+            月结60天
+          </mat-radio-button>
+          <mat-radio-button
+              [checked]="quotationGroupLog.termsofpayment.deadline === 0"
+              value="0">
             <mat-form-field>
-              <input matInput type="text" tabindex="108" [(ngModel)]="quotationGroupLog.termsofpayment.other" placeholder="其他付款方式">
+              <input matInput
+                  type="text"
+                  tabindex="108"
+                  [(ngModel)]="quotationGroupLog.termsofpayment.other"
+                  (click)="onClickTOP()"
+                  placeholder="其他付款方式">
             </mat-form-field>
           </mat-radio-button>
         </mat-radio-group>
@@ -63,21 +101,39 @@
       <mat-list>
         <mat-list-item>
           <mat-form-field>
-            <input class="uppercase" matInput type="text" tabindex="201" [(ngModel)]="quotationLog.supplierPartId" placeholder="供方料号">
+            <input matInput
+                class="uppercase"
+                type="text"
+                tabindex="201"
+                [(ngModel)]="quotationLog.supplierPartId"
+                placeholder="供方料号" />
           </mat-form-field>
 
           <mat-form-field>
-            <input class="uppercase" matInput type="text" tabindex="202" [(ngModel)]="quotationLog.demanderPartId" placeholder="需方料号" required="">
+            <input matInput
+                class="uppercase"
+                type="text"
+                tabindex="202"
+                [(ngModel)]="quotationLog.demanderPartId"
+                required=""
+                placeholder="需方料号" />
           </mat-form-field>
         </mat-list-item>
 
         <mat-list-item>
           <mat-form-field>
-            <input matInput type="number" min="0" tabindex="203" [(ngModel)]="quotationLog.mpq" placeholder="最小包装数">
+            <input matInput
+                type="number"
+                min="0"
+                tabindex="203"
+                [(ngModel)]="quotationLog.mpq"
+                placeholder="最小包装数" />
           </mat-form-field>
 
           <mat-form-field>
-            <mat-select [(ngModel)]="quotationLog.unit" placeholder="单位">
+            <mat-select
+                [(ngModel)]="quotationLog.unit"
+                placeholder="单位">
               <mat-option value="pcs">PCS</mat-option>
               <mat-option value="m">M</mat-option>
               <mat-option value="kpcs">KPCS</mat-option>
@@ -88,11 +144,18 @@
 
         <mat-list-item>
           <mat-form-field>
-            <input matInput type="number" min="0" tabindex="204" [(ngModel)]="quotationLog.moq" placeholder="最小起订数">
+            <input matInput
+                type="number"
+                min="0"
+                tabindex="204"
+                [(ngModel)]="quotationLog.moq"
+                placeholder="最小起订数" />
           </mat-form-field>
 
           <mat-form-field>
-            <mat-select [(ngModel)]="quotationLog.unit" placeholder="单位">
+            <mat-select
+                [(ngModel)]="quotationLog.unit"
+                placeholder="单位">
               <mat-option value="pcs">PCS</mat-option>
               <mat-option value="m">M</mat-option>
               <mat-option value="kpcs">KPCS</mat-option>
@@ -103,7 +166,10 @@
 
         <mat-list-item>
           <mat-form-field>
-            <input matInput tabindex="206" [(ngModel)]="quotationLog.lt.value" placeholder="订货周期">
+            <input matInput
+                tabindex="206"
+                [(ngModel)]="quotationLog.lt.value"
+                placeholder="订货周期" />
           </mat-form-field>
 
           <mat-form-field>
@@ -117,11 +183,20 @@
 
         <mat-list-item>
           <mat-form-field>
-            <input matInput min="0" tabindex="207" [(ngModel)]="quotationLog.price.value" placeholder="单价" required="">
+            <input matInput
+                min="0"
+                tabindex="207"
+                [(ngModel)]="quotationLog.price.value"
+                required=""
+                placeholder="单价" />
           </mat-form-field>
 
           <mat-form-field>
-            <input matInput disabled="" [(ngModel)]="quotationLog.price.unit" [value]="getPriceUnit()" placeholder="单位">
+            <input matInput
+                disabled=""
+                [(ngModel)]="quotationLog.price.unit"
+                [value]="getPriceUnit()"
+                placeholder="单位" />
           </mat-form-field>
         </mat-list-item>
       </mat-list>
@@ -129,7 +204,9 @@
 
     <section>
       <mat-form-field>
-        <textarea matInput placeholder="备注"></textarea>
+        <textarea matInput
+          placeholder="备注">
+        </textarea>
       </mat-form-field>
     </section>
 
