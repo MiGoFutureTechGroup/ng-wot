@@ -1,6 +1,20 @@
 <mat-card-content class="table-container mat-elevation-z8">
-  <h2>出库登记</h2>
-  <span>Exstock Registration</span>
+  <h2>盘点库存</h2>
+  <span>Check Inventory</span>
+
+    <input matInput
+        tabindex="-1"
+        [(ngModel)]="warehouseLogCache.date"
+        disabled=""
+        hidden=""
+        placeholder="盘存日期" />
+
+    <input matInput
+        tabindex="-1"
+        [(ngModel)]="warehouseLogCache.user"
+        disabled=""
+        hidden=""
+        placeholder="盘存人" />
 
   <mat-list>
 
@@ -8,42 +22,20 @@
       <mat-form-field>
         <input matInput
             tabindex="101"
-            [matDatepicker]="picker"
-            [(ngModel)]="warehouseLogCache.date"
-            disabled=""
-            placeholder="发货日期" />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker
-            touchUi="true"
-            disabled="false">
-        </mat-datepicker>
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput
-            tabindex="102"
-            [(ngModel)]="warehouseLogCache.picker"
-            placeholder="领料人" />
-      </mat-form-field>
-    </mat-list-item>
-
-    <mat-list-item>
-      <mat-form-field>
-        <input matInput
-            tabindex="103"
             [(ngModel)]="warehouseLogCache.partId"
             placeholder="料号" />
       </mat-form-field>
 
       <mat-form-field>
         <input matInput
-            tabindex="104"
+            tabindex="102"
             [(ngModel)]="warehouseLogCache.amount"
             placeholder="数量" />
       </mat-form-field>
 
       <mat-form-field>
-        <mat-select tabindex="105"
+        <mat-select
+            tabindex="103"
             [(ngModel)]="warehouseLogCache.unit"
             placeholder="单位">
           <mat-option
@@ -58,7 +50,7 @@
     <mat-list-item>
       <mat-form-field>
         <input matInput
-            tabindex="106"
+            tabindex="104"
             [(ngModel)]="warehouseLogCache.comment"
             placeholder="备注" />
       </mat-form-field>

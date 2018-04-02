@@ -9,7 +9,7 @@
         <input matInput
             tabindex="101"
             [matDatepicker]="picker"
-            [(ngModel)]="warehouseLogCache.rcptDate"
+            [(ngModel)]="warehouseLogCache.date"
             disabled=""
             placeholder="收货日期" />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -22,7 +22,7 @@
       <mat-form-field>
         <input matInput
             tabindex="102"
-            [(ngModel)]="warehouseLogCache.providerId"
+            [(ngModel)]="warehouseLogCache.provider"
             placeholder="供应商" />
       </mat-form-field>
     </mat-list-item>

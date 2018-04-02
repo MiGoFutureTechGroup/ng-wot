@@ -1,5 +1,6 @@
 import { Creation } from './creation';
 import { Company } from './company';
+import { User } from './user';
 
 export class Warehouse {
   // 所属公司
@@ -8,9 +9,11 @@ export class Warehouse {
   name: string;
 }
 
-class AbstractLog extends Creation {
+export class AbstractLog extends Creation {
   // 操作日期
   date: Date;
+  // 经办人
+  user: User;
   // 所属仓库
   warehouse: Warehouse;
   // 仓库料号
@@ -24,7 +27,11 @@ class AbstractLog extends Creation {
 }
 
 export class InstockLog extends AbstractLog {
+  // 供应商
+  provider: Company;
 }
 
-export class OutstockLog extends AbstractLog {
+export class ExstockLog extends AbstractLog {
+  // 领料人
+  picker: User;
 }
