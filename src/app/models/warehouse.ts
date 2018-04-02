@@ -10,6 +10,8 @@ export class Warehouse {
 }
 
 export class AbstractLog extends Creation {
+  // 操作日期
+  date: Date;
   // 经办人
   user: User;
   // 所属仓库
@@ -24,13 +26,12 @@ export class AbstractLog extends Creation {
   comment: string;
 }
 
-export class BaseLog extends AbstractLog {
-  // 操作日期
-  date: Date;
+export class InstockLog extends AbstractLog {
+  // 供应商
+  provider: Company;
 }
 
-export class InstockLog extends BaseLog {
-}
-
-export class ExstockLog extends BaseLog {
+export class ExstockLog extends AbstractLog {
+  // 领料人
+  picker: User;
 }
