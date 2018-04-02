@@ -15,6 +15,9 @@ import { OrderComponent as PurchaseOrderComponent } from '../components/purchase
 import { CompanyComponent } from '../components/company/company.component';
 import { MaterialLinkComponent } from '../components/materials/material-link.component';
 import { MaterialTableComponent } from '../components/materials/material-table.component';
+import { WarehouseTableComponent } from '../components/warehouse/warehouse-table.component';
+import { InstockComponent } from '../components/warehouse/instock.component';
+import { ExstockComponent } from '../components/warehouse/exstock.component';
 
 // 测试用导入
 import { LoginComponent } from '../modules/session/components/login/login.component';
@@ -69,15 +72,19 @@ const routes: Routes = [
   },
   {
     path: 'warehouse',
-    //component: WarehouseComponent,
+    component: WarehouseComponent,
     children: [
       {
-        path: 'input',
-        component: WarehouseComponent,
+        path: 'instock',
+        component: InstockComponent,
       },
       {
-        path: 'output',
-        component: WarehouseComponent,
+        path: 'exstock',
+        component: ExstockComponent,
+      },
+      {
+        path: '',
+        component: WarehouseTableComponent,
       }
     ]
   },
