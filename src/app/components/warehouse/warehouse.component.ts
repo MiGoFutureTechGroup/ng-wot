@@ -12,30 +12,9 @@ import { User } from '../../models/user';
 })
 export class WarehouseComponent implements OnInit {
 
-  units = [
-    {id: 1, name: 'pcs'},
-    {id: 2, name: 'kpcs'},
-  ];
-  warehouseLogCache: InstockLog = new InstockLog();
-  displayedColumns1 = ['rcptDate', 'providerId', 'partId', 'amount', 'unit', 'comment'];
-  displayedColumns2 = ['select', 'providerId', 'partId', 'amount', 'unit', 'comment'];
-
-  dataSource = new MatTableDataSource<InstockLog>(MOCK_DATA);
-  selection = new SelectionModel<InstockLog>(true, []);
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
   constructor() { }
 
   ngOnInit() {
   }
 
-  applyFilter(value: string): void {
-  }
-
 }
-
-const MOCK_DATA: InstockLog[] = [
-];
-
-const MOCK_WAREHOUSE: Warehouse = new Warehouse();
