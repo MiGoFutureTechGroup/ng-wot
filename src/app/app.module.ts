@@ -34,6 +34,7 @@ import { MaterialService } from './services/material.service';
 import { CompanyService } from './services/company.service';
 import { WarehouseTableComponent } from './components/warehouse/warehouse-table.component';
 import { InstockComponent } from './components/warehouse/instock.component';
+import { ExstockComponent } from './components/warehouse/exstock.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { InstockComponent } from './components/warehouse/instock.component';
     MaterialTableComponent,
     WarehouseTableComponent,
     InstockComponent,
+    ExstockComponent,
   ],
   imports: [
     BrowserModule,
