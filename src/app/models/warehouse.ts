@@ -1,5 +1,6 @@
 import { Creation } from './creation';
 import { Company } from './company';
+import { User } from './user';
 
 export class Warehouse {
   // 所属公司
@@ -9,6 +10,8 @@ export class Warehouse {
 }
 
 export class AbstractLog extends Creation {
+  // 经办人
+  user: User;
   // 所属仓库
   warehouse: Warehouse;
   // 仓库料号
