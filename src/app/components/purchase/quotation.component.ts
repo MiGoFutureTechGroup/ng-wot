@@ -74,5 +74,9 @@ export class QuotationComponent implements OnInit {
     return currencyUnit && quantityName ? currencyUnit + '/' + quantityName : '';
   }
 
+  onClickTOP(): void {
+    this.quotationGroupLog.termsofpayment.deadline = 0;
+  }
+
 }
 
