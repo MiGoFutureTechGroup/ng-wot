@@ -18,6 +18,7 @@ import { MaterialTableComponent } from '../components/materials/material-table.c
 import { WarehouseTableComponent } from '../components/warehouse/warehouse-table.component';
 import { InstockComponent } from '../components/warehouse/instock.component';
 import { ExstockComponent } from '../components/warehouse/exstock.component';
+import { WarehouseCheckComponent } from '../components/warehouse/warehouse-check.component';
 
 // 测试用导入
 import { LoginComponent } from '../modules/session/components/login/login.component';
@@ -81,6 +82,10 @@ const routes: Routes = [
       {
         path: 'exstock',
         component: ExstockComponent,
+      },
+      {
+        path: 'check',
+        component: WarehouseCheckComponent,
       },
       {
         path: '',
