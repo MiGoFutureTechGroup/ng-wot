@@ -96,6 +96,9 @@
 
   <!-- 报价记录 -->
   <mat-card-content class="table-container mat-elevation-z8">
+    <header>
+      <h2>报价明细</h2>
+    </header>
 
     <section>
       <mat-list>
@@ -127,7 +130,7 @@
                 min="0"
                 tabindex="203"
                 [(ngModel)]="quotationLog.mpq"
-                placeholder="最小包装数" />
+                placeholder="最小包装数(MPQ)" />
           </mat-form-field>
 
           <mat-form-field>
@@ -149,7 +152,7 @@
                 min="0"
                 tabindex="204"
                 [(ngModel)]="quotationLog.moq"
-                placeholder="最小起订数" />
+                placeholder="最小起订数(MOQ)" />
           </mat-form-field>
 
           <mat-form-field>
@@ -205,10 +208,24 @@
     <section>
       <mat-form-field>
         <textarea matInput
-          placeholder="备注">
-        </textarea>
+          placeholder="备注"></textarea>
       </mat-form-field>
     </section>
 
+    <footer>
+
+      <button mat-raised-button
+          class="float-right"
+          color="accent"
+          (click)="saveQuotationBook()">保存&amp;结束报价</button>
+
+      <button mat-raised-button
+          class="float-right"
+          color="accent"
+          (click)="saveQuotationDetail()">保存</button>
+
+    </footer>
+
   </mat-card-content>
+
 </mat-card>

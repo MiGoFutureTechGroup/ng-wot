@@ -16,9 +16,12 @@ export class QuotationComponent implements OnInit {
   };
 
   quotationGroupLog = {
+    providerId: undefined,
+    date: new Date(),
     currency: 'RMB',
-    tax: 1,
-    fee: 1,
+    bidder: undefined,
+    tax: true,
+    fee: true,
     termsofpayment: {
       deadline: 30,
       other: undefined,
@@ -76,6 +79,14 @@ export class QuotationComponent implements OnInit {
 
   onClickTOP(): void {
     this.quotationGroupLog.termsofpayment.deadline = 0;
+  }
+
+  saveQuotationBook(): void {
+    // TODO
+  }
+
+  saveQuotationDetail(): void {
+    // TODO
   }
 
 }
