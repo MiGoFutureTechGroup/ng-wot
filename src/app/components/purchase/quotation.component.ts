@@ -16,7 +16,7 @@ export class QuotationComponent implements OnInit {
   };
 
   quotationGroupLog = {
-    currency: undefined,
+    currency: 'RMB',
     tax: 1,
     fee: 1,
     termsofpayment: {
