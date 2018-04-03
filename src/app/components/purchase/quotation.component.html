@@ -34,7 +34,7 @@
 
         <mat-form-field>
           <mat-select
-              [(ngModel)]="quotationGroupLog.currency"
+              [(value)]="quotationGroupLog.currency"
               name="currency"
               placeholder="币种"
               required="">
@@ -132,7 +132,7 @@
 
           <mat-form-field>
             <mat-select
-                [(ngModel)]="quotationLog.unit"
+                [(value)]="quotationLog.unit"
                 placeholder="单位">
               <mat-option value="pcs">PCS</mat-option>
               <mat-option value="m">M</mat-option>
@@ -154,7 +154,7 @@
 
           <mat-form-field>
             <mat-select
-                [(ngModel)]="quotationLog.unit"
+                [(value)]="quotationLog.unit"
                 placeholder="单位">
               <mat-option value="pcs">PCS</mat-option>
               <mat-option value="m">M</mat-option>
