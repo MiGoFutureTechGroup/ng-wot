@@ -44,7 +44,7 @@
 
       <mat-form-field>
         <mat-select tabindex="105"
-            [(ngModel)]="warehouseLogCache.unit"
+            [(value)]="warehouseLogCache.unit"
             placeholder="单位">
           <mat-option
               *ngFor="let unit of units"
