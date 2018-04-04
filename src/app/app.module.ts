@@ -105,4 +105,13 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
     AppComponent,
   ]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    private dateAdapter: DateAdapter<any>
+  ) {
+  }
+
+  setDateAdapterLocale(localeString: string): void {
+    this.dateAdapter.setLocale(localeString);
+  }
+}
