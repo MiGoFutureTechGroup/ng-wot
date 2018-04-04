@@ -37,6 +37,9 @@ import { InstockComponent } from './components/warehouse/instock.component';
 import { ExstockComponent } from './components/warehouse/exstock.component';
 import { WarehouseCheckComponent } from './components/warehouse/warehouse-check.component';
 
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +86,20 @@ import { WarehouseCheckComponent } from './components/warehouse/warehouse-check.
     MaterialDetailResolverService,
     MaterialService,
     CompanyService,
+    // Datepicker
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'zh-cn',
+    },
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
+      deps: [MAT_DATE_LOCALE]
+    },
+    {
+      provide: MAT_DATE_FORMATS,
+      useValue: MAT_MOMENT_DATE_FORMATS
+    },
   ],
   bootstrap: [
     AppComponent,
