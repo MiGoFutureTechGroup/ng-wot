@@ -2,31 +2,33 @@ import { UserType } from './user-type';
 import { Company } from './company';
 
 export class User {
-  // 用户 ID
-  id: string;
-  // 用户类型
-  type: UserType;
-  // 用户名称
-  name: string;
-  // 注册日期
-  date: string;
-  // 所属公司
-  company: Company;
+  constructor(
+    // 用户 ID
+    public id: string = null,
+    // 用户类型
+    public type: UserType = new UserType(),
+    // 用户名称
+    public name: string = null,
+    // 注册日期
+    public date: string = null,
+    // 所属公司
+    public company: Company = new Company(),
 
-  // 联系方式
-  // QQ
-  qq: string;
-  // 手机号码
-  phoneNumber: string;
-  // 座机号码
-  landlineNumber: string;
-  // 电子邮箱
-  workEMail: string;
+    // 联系方式
+    // QQ
+    public qq: string = null,
+    // 手机号码
+    public phoneNumber: string = null,
+    // 座机号码
+    public landlineNumber: string = null,
+    // 电子邮箱
+    public workEMail: string = null,
 
-  ////////////////////////////////////////////
-  // 虚用户
-  ////////////////////////////////////////////
-  // 用例：
-  // 采购员手动添加供应商信息时，需要记录联系人名称及其联系方式
-  isVirtual: boolean = false;
+    ////////////////////////////////////////////
+    // 虚用户
+    ////////////////////////////////////////////
+    // 用例：
+    // 采购员手动添加供应商信息时，需要记录联系人名称及其联系方式
+    public isVirtual: boolean = false,
+  ) {}
 }
