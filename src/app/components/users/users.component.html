@@ -44,7 +44,7 @@
 
       <ng-container matColumnDef="type">
         <mat-header-cell *matHeaderCellDef mat-sort-header>类型</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.type.name}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="name">
@@ -59,7 +59,7 @@
 
       <ng-container matColumnDef="company">
         <mat-header-cell *matHeaderCellDef mat-sort-header>所属公司</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.company}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.company.name}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="qq">

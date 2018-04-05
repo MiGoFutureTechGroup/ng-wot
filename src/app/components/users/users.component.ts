@@ -64,5 +64,16 @@ export class UsersComponent implements OnInit {
 }
 
 const ELEMENT_DATA: User[] = [
-  {id: '1', type: new UserType(), name: 'abc', date: '1993', company: new Company(), qq: '123123123', phoneNumber: '', landlineNumber: '', workEMail: '', isVirtual: false}
+  {
+    id: '1',
+    type: new UserType('人脑研究员'),
+    name: '米开朗琪罗',
+    date: '2017-01',
+    company: new Company('米戈未来科技有限公司'),
+    qq: '123123123',
+    phoneNumber: '',
+    landlineNumber: '',
+    workEMail: '',
+    isVirtual: false,
+  }
 ];
