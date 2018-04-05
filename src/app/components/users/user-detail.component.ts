@@ -23,7 +23,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activeUser = this.userService.activeUser;
+    this.reset();
   }
 
   isViewNewUser(): boolean {
@@ -31,7 +31,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   private reset(): void {
-    this.activeUser = this.userService.activeUser = null;
+    this.activeUser = new User();
   }
 
   onCancel(): void {

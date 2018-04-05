@@ -1,24 +1,30 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/map';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { User } from '../models/user';
 import { UserType } from '../models/user-type';
 
 @Injectable()
-export class UserService {
+export class UserService implements OnInit {
 
   private user: User;
+  private users: BehaviorSubject<User[]>;
 
   constructor() { }
 
-  get activeUser(): User {
-    if (!this.user)
-      this.user = new User();
-
-    return this.user;
+  ngOnInit() {
+    let retrievedUsers: User[] = [];
+    this.users = new BehaviorSubject<User[]>(retrievedUsers);
   }
 
-  set activeUser(user: User) {
-    this.user = user;
+  getUsers() {
+    return this.users;
+  }
+
+  getUserById(id: string | number) {
+    return this.getUsers().map(users => users.find(user => user.id == id));
   }
 
 }

@@ -58,7 +58,6 @@ export class UsersComponent implements OnInit {
   onClickTableRow(row: User): void {
     this.selection.toggle(row);
     this.router.navigate(['/users/', row.id]);
-    this.userService.activeUser = row;
   }
 
 }
