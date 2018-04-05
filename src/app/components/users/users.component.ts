@@ -26,7 +26,7 @@ export class UsersComponent implements OnInit {
   constructor(
     private router: Router,
     private location: Location,
-    private service: UserService,
+    private userService: UserService,
   ) { }
 
   ngOnInit() {
@@ -57,8 +57,8 @@ export class UsersComponent implements OnInit {
 
   onClickTableRow(row: User): void {
     this.selection.toggle(row);
-    this.router.navigate(['/users/' + row.id]);
-    console.log(row);
+    this.router.navigate(['/users/', row.id]);
+    this.userService.activeUser = row;
   }
 
 }
