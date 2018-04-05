@@ -1,6 +1,7 @@
 import { OnInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { User } from '../../models/user';
@@ -23,6 +24,7 @@ export class UsersComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
+    private router: Router,
     private location: Location,
     private service: UserService,
   ) { }
@@ -55,7 +57,7 @@ export class UsersComponent implements OnInit {
 
   onClickTableRow(row: User): void {
     this.selection.toggle(row);
-    this.location.go('/users/' + row.id);
+    this.router.navigate(['/users/' + row.id]);
     console.log(row);
   }
 
