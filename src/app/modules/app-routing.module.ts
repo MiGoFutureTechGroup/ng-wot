@@ -16,7 +16,7 @@ import { CompanyComponent } from '../components/company/company.component';
 import { MaterialLinkComponent } from '../components/materials/material-link.component';
 import { MaterialTableComponent } from '../components/materials/material-table.component';
 
-// 测试用导入
+// test import
 import { LoginComponent } from '../modules/session/components/login/login.component';
 
 
