@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // Modules
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MaterialModule } from './modules/material.module';
+import { SessionModule } from './modules/session/session.module';
 // Components
 import { AppComponent } from './app.component';
 import { MaterialsComponent } from './components/materials/materials.component';
@@ -14,10 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { UsersComponent } from './components/users/users.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { UserDetailComponent } from './components/users/user-detail.component';
-import { UserTypeComponent } from './components/users/user-type.component';
 import { WarehouseComponent } from './components/warehouse/warehouse.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { OrderComponent as PurchaseOrderComponent } from './components/purchase/order.component';
@@ -27,8 +25,6 @@ import { MaterialTypeComponent } from './components/materials/material-type.comp
 import { MaterialLinkComponent } from './components/materials/material-link.component';
 import { MaterialTableComponent } from './components/materials/material-table.component';
 // Services
-import { UserService } from './services/user.service';
-import { SessionModule } from './modules/session/session.module';
 import { MaterialDetailResolverService } from './components/materials/services/material-detail-resolver.service';
 import { MaterialService } from './services/material.service';
 import { CompanyService } from './services/company.service';
@@ -43,9 +39,6 @@ import { CompanyService } from './services/company.service';
     PageNotFoundComponent,
     FooterComponent,
     WelcomeComponent,
-    UsersComponent,
-    UserDetailComponent,
-    UserTypeComponent,
     PurchaseComponent,
     QuotationComponent,
     PurchaseOrderComponent,
@@ -62,16 +55,11 @@ import { CompanyService } from './services/company.service';
     AppRoutingModule,
     MaterialModule,
   ],
-
   entryComponents: [
-    UserDetailComponent,
-    UserTypeComponent,
     MaterialDetailComponent,
     MaterialTypeComponent,
   ],
-
   providers: [
-    UserService,
     MaterialDetailResolverService,
     MaterialService,
     CompanyService,

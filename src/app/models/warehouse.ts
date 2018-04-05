@@ -1,5 +1,5 @@
 import { Creation } from './creation';
-import { Company } from './company';
+import { Company } from '../modules/user/user';
 
 export class Warehouse {
   // 所属公司

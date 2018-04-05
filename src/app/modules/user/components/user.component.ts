@@ -4,18 +4,18 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { User } from '../../models/user';
-import { UserService } from '../../services/user.service';
+import { User } from '../models/user';
+import { UserService } from '../services/user.service';
 // test
-import { Company } from '../../models/company';
-import { UserType } from '../../models/user-type';
+import { Company } from '../models/company';
+import { Role } from '../models/role';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class UserComponent implements OnInit {
 
   displayedColumns = ['id', 'type', 'name', 'date', 'company', 'qq', 'phoneNumber', 'landlineNumber', 'workEMail'];
   dataSource = new MatTableDataSource<User>(ELEMENT_DATA);
@@ -65,7 +65,7 @@ export class UsersComponent implements OnInit {
 const ELEMENT_DATA: User[] = [
   {
     id: '1',
-    type: new UserType('人脑研究员'),
+    type: new Role('人脑研究员'),
     name: '米开朗琪罗',
     date: '2017-01',
     company: new Company('米戈未来科技有限公司'),

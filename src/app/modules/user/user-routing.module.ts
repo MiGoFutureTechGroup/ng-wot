@@ -1,15 +1,37 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+// components
+import { UserComponent } from './components/user.component';
+import { UserDetailComponent } from './components/user-detail.component';
+import { RoleComponent } from './components/role.component';
+// resolvers
+import { UserDetailResolver } from './services/user-detail-resolver.service';
+//
 
-import { UserDetailResolver } from './user-detail-resolver.service';
+const routes: Routes = [{
+  path: '',
+  component: UserComponent,
+  children: [{
+    path: ':id',
+    component: UserDetailComponent,
+  }, {
+    path: 'new/user',
+    component: UserDetailComponent,
+  }, {
+    path: 'new/type',
+    component: RoleComponent,
+  }]
+}];
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes),
   ],
-  declarations: [],
+  exports: [ RouterModule, ],
   providers: [
     UserDetailResolver,
   ],
 })
-export class UsersRoutingModule { }
+export class UserRoutingModule { }

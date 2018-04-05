@@ -4,7 +4,6 @@ import 'rxjs/add/operator/map';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { User } from '../models/user';
-import { UserType } from '../models/user-type';
 
 @Injectable()
 export class UserService implements OnInit {

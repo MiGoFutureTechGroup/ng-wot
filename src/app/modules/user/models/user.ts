@@ -1,4 +1,4 @@
-import { UserType } from './user-type';
+import { Role } from './role';
 import { Company } from './company';
 
 export class User {
@@ -6,7 +6,7 @@ export class User {
     // 用户 ID
     public id: string = null,
     // 用户类型
-    public type: UserType = new UserType(),
+    public type: Role = new Role(),
     // 用户名称
     public name: string = null,
     // 注册日期

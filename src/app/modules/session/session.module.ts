@@ -4,12 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-// 用户自定义模块
+// modules
 import { MaterialModule } from '../material.module';
-// 用户自定义组件
+// components
 import { LoginComponent } from './components/login/login.component';
 import { JoinComponent } from './components/join/join.component';
-// 用户自定义服务
+// services
 import { SessionService } from './services/session.service';
 
 @NgModule({

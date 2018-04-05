@@ -1,19 +1,19 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { UserType } from '../../models/user-type';
+import { Role } from '../models/role';
 
 @Component({
   selector: 'app-user-type',
-  templateUrl: './user-type.component.html',
-  styleUrls: ['./user-type.component.scss']
+  templateUrl: './role.component.html',
+  styleUrls: ['./role.component.scss']
 })
-export class UserTypeComponent implements OnInit {
+export class RoleComponent implements OnInit {
 
-  @Input() type: UserType;
+  @Input() type: Role;
 
   constructor(
-    public dialogRef: MatDialogRef<UserTypeComponent>,
+    public dialogRef: MatDialogRef<RoleComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
