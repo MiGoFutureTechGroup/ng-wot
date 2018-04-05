@@ -18,6 +18,7 @@ import { MaterialTableComponent } from '../components/materials/material-table.c
 
 // test import
 import { LoginComponent } from '../modules/session/components/login/login.component';
+import { UsersRoutingModule } from '../components/users/users-routing.module';
 
 
 const routes: Routes = [
@@ -112,7 +113,8 @@ const routes: Routes = [
     RouterModule.forRoot(
       routes,
       //{ enableTracing: true, }
-    )
+    ),
+    UsersRoutingModule
   ],
   exports: [
     RouterModule
