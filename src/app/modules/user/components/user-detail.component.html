@@ -12,7 +12,7 @@
         tabindex="-1"
         type="hidden"
         name="company"
-        [(ngModel)]="activeUser.company"
+        [value]="activeUser.company.name"
         placeholder="所属公司">
 
     <mat-form-field *ngIf="!isViewNewUser()">
