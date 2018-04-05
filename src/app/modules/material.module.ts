@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CdkTableModule } from '@angular/cdk/table';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
 	MatAutocompleteModule,
 	MatButtonModule,
@@ -71,7 +71,7 @@ import {
 		MatTabsModule,
 		MatToolbarModule,
 		MatTooltipModule,
-		BrowserAnimationsModule,
+		// BrowserAnimationsModule,
 	],
 	declarations: [
 	],

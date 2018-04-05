@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 // modules
 import { MaterialModule } from '../material.module';
 // components
@@ -17,7 +17,7 @@ import { SessionService } from './services/session.service';
 		CommonModule,
 
     // 浏览器
-    BrowserModule,
+    // BrowserModule,
 
     // 表单
     FormsModule,
