@@ -23,25 +23,25 @@ export class UserDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.reset();
+    this.route.data.subscribe((data: {activeUser: User}) => {
+      this.activeUser = data.activeUser;
+    });
   }
 
   isViewNewUser(): boolean {
     return this.location.isCurrentPathEqualTo('/users/new/user');
   }
 
-  private reset(): void {
-    this.activeUser = new User();
-  }
-
   onCancel(): void {
     this.router.navigate(['/users']);
-    this.reset();
+    // TODO
+    this.activeUser = null;
   }
 
   onSubmit(): void {
     console.log('onSubmit');
-    this.reset();
+    // TODO
+    this.activeUser = null;
   }
 
   isViewUsers(): boolean {

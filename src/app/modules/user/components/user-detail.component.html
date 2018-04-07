@@ -15,15 +15,12 @@
         [value]="activeUser.company.name"
         placeholder="所属公司">
 
-    <mat-form-field *ngIf="!isViewNewUser()">
-      <input matInput
-          tabindex="101"
-          type="text"
-          name="id"
-          [(ngModel)]="activeUser.id"
-          disabled=""
-          placeholder="用户编码">
-    </mat-form-field>
+    <input
+        tabindex="-1"
+        type="hidden"
+        name="id"
+        [value]="activeUser.id"
+        placeholder="用户编码">
 
     <mat-form-field>
       <input matInput
@@ -59,18 +56,21 @@
     <mat-form-field>
       <input matInput
           tabindex="301"
+          [(ngModel)]="activeUser.qq"
           placeholder="QQ">
     </mat-form-field>
 
     <mat-form-field>
       <input matInput
           tabindex="302"
+          [(ngModel)]="activeUser.phoneNumber"
           placeholder="手机号码">
     </mat-form-field>
 
     <mat-form-field>
       <input matInput
           tabindex="303"
+          [(ngModel)]="activeUser.landlineNumber"
           placeholder="座机号码">
     </mat-form-field>
 
