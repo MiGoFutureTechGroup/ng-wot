@@ -4,7 +4,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { User } from '../models/user';
+import { User, ELEMENT_DATA } from '../models/user';
 import { UserService } from '../services/user.service';
 // test
 import { Company } from '../models/company';
@@ -61,18 +61,3 @@ export class UserComponent implements OnInit {
   }
 
 }
-
-const ELEMENT_DATA: User[] = [
-  {
-    id: '1',
-    type: new Role('人脑研究员'),
-    name: '米开朗琪罗',
-    date: '2017-01',
-    company: new Company('米戈未来科技有限公司'),
-    qq: '123123123',
-    phoneNumber: '',
-    landlineNumber: '',
-    workEMail: '',
-    isVirtual: false,
-  }
-];
