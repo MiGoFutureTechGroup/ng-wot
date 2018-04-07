@@ -17,7 +17,6 @@ export class UserDetailResolver implements Resolve<User> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> {
     let id = route.paramMap.get('id');
-    console.log('Resolving user detail', id);
 
     return this.userService.getUserById(id).take(1).map(user => {
       if (user) {
