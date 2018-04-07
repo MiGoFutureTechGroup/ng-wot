@@ -1,32 +1,40 @@
-<div *ngIf="data">
-  <div *ngIf="data.type">
+<mat-card-content
+    class="table-container mat-elevation-z8">
 
-    <h1 mat-dialog-title>用户类型</h1>
+  <header>
+    <h2 *ngIf="isViewNewRole()">新增用户分组</h2>
+    <h2 *ngIf="!isViewNewRole()">修改用户分组</h2>
+  </header>
 
-    <div mat-dialog-content class="center">
+  <section *ngIf="activeRole">
 
-      <mat-form-field>
-        <input matInput
-            type="text"
-            tabindex="1"
-            [(ngModel)]="data.type.id"
-            placeholder="用户类型 ID">
-      </mat-form-field>
+    <mat-form-field>
+      <input matInput
+          type="text"
+          tabindex="101"
+          [(ngModel)]="activeRole.id"
+          placeholder="用户分组 ID">
+    </mat-form-field>
 
-      <mat-form-field>
-        <input matInput
-            type="text"
-            tabindex="2"
-            [(ngModel)]="data.type.name"
-            placeholder="用户类型名称">
-      </mat-form-field>
+    <mat-form-field>
+      <input matInput
+          type="text"
+          tabindex="102"
+          [(ngModel)]="activeRole.name"
+          placeholder="用户分组名称">
+    </mat-form-field>
 
-    </div>
+  </section>
 
-    <div mat-dialog-actions class="center">
-      <button mat-button (click)="onCancel()">取消</button>
-      <button mat-button [mat-dialog-close]="data.type.id" cdkFocusInitial>确定</button>
-    </div>
+  <footer>
 
-  </div>
-</div>
+    <button mat-raised-button
+        (click)="onCancel()">取消</button>
+
+    <button mat-raised-button
+        class="float-right"
+        (click)="onSubmit()">确定</button>
+
+  </footer>
+
+</mat-card-content>
