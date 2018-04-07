@@ -15,6 +15,9 @@ const routes: Routes = [{
   children: [{
     path: ':id',
     component: UserDetailComponent,
+    resolve: {
+      activeUser: UserDetailResolver,
+    }
   }, {
     path: 'new/user',
     component: UserDetailComponent,

@@ -3,18 +3,15 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { User } from '../models/user';
+import { User, ELEMENT_DATA } from '../models/user';
 
 @Injectable()
-export class UserService implements OnInit {
+export class UserService {
 
-  private user: User;
   private users: BehaviorSubject<User[]>;
 
-  constructor() { }
-
-  ngOnInit() {
-    let retrievedUsers: User[] = [];
+  constructor() {
+    let retrievedUsers: User[] = ELEMENT_DATA;
     this.users = new BehaviorSubject<User[]>(retrievedUsers);
   }
 
@@ -23,7 +20,8 @@ export class UserService implements OnInit {
   }
 
   getUserById(id: string | number) {
-    return this.getUsers().map(users => users.find(user => user.id == id));
+    let res = this.getUsers().map(users => users.find(user => user.id == id));
+    return res;
   }
 
 }

@@ -32,3 +32,18 @@ export class User {
     public isVirtual: boolean = false,
   ) {}
 }
+
+export const ELEMENT_DATA: User[] = [
+  {
+    id: '1',
+    type: new Role('人脑研究员'),
+    name: '米开朗琪罗',
+    date: '2017-01',
+    company: new Company('米戈未来科技有限公司'),
+    qq: '123123123',
+    phoneNumber: '12123',
+    landlineNumber: '111111',
+    workEMail: '34234@1542.com',
+    isVirtual: false,
+  }
+];
