@@ -17,12 +17,15 @@ const routes: Routes = [{
     component: UserDetailComponent,
     resolve: {
       activeUser: UserDetailResolver,
-    }
+    },
   }, {
     path: 'new/user',
     component: UserDetailComponent,
+    resolve: {
+      activeUser: UserDetailResolver,
+    },
   }, {
-    path: 'new/type',
+    path: 'new/role',
     component: RoleComponent,
   }]
 }];
