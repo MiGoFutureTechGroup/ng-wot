@@ -7,6 +7,7 @@ import { UserDetailComponent } from './components/user-detail.component';
 import { RoleComponent } from './components/role.component';
 // resolvers
 import { UserDetailResolver } from './services/user-detail-resolver.service';
+import { RoleResolver } from './services/role-resolver.service';
 //
 
 const routes: Routes = [{
@@ -27,6 +28,9 @@ const routes: Routes = [{
   }, {
     path: 'new/role',
     component: RoleComponent,
+    resolve: {
+      activeRole: RoleResolver,
+    }
   }]
 }];
 
@@ -38,6 +42,7 @@ const routes: Routes = [{
   exports: [ RouterModule, ],
   providers: [
     UserDetailResolver,
+    RoleResolver,
   ],
 })
 export class UserRoutingModule { }
