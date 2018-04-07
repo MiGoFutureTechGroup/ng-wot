@@ -4,15 +4,18 @@ import 'rxjs/add/operator/map';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { User, ELEMENT_DATA } from '../models/user';
+import { Role } from '../models/role';
 
 @Injectable()
 export class UserService {
 
   private users: BehaviorSubject<User[]>;
+  private roles: BehaviorSubject<Role[]>;
 
   constructor() {
     let retrievedUsers: User[] = ELEMENT_DATA;
     this.users = new BehaviorSubject<User[]>(retrievedUsers);
+    this.roles = new BehaviorSubject<Role[]>([]);
   }
 
   getUsers() {
@@ -20,8 +23,15 @@ export class UserService {
   }
 
   getUserById(id: string | number) {
-    let res = this.getUsers().map(users => users.find(user => user.id == id));
-    return res;
+    return this.getUsers().map(users => users.find(user => user.id == id));
+  }
+
+  getRoles() {
+    return this.roles;
+  }
+
+  getRoleById(id: string | number) {
+    return this.getRoles().map(roles => roles.find(role => role.id == id));
   }
 
 }
