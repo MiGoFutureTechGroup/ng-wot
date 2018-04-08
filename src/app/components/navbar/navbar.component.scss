@@ -1,7 +1,6 @@
-@import "../../../assets/variables";
-@import "../../../assets/global";
+@import "../../app.g";
 
-nav ul {
+nav > ul {
 	@extend %topmost-node;
 	top: 0;
 	width: 100%;
@@ -13,57 +12,66 @@ nav ul {
 	overflow: hidden;
 	background-color: $default-navbar-bgcolor;
 
-	li {
+	& > li {
 		float: left;
+		height: 100%;
 
-		a, .dropbtn {
-			display: inline-block;
-			color: $default-navbar-color;
-			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
+		& > {
+			:first-child {
+				display: inline-block;
+				color: $default-navbar-color;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
 
-			$default-dimension: 20px;
-			font-size: $default-dimension;
-			line-height: $default-dimension;
-			height: $default-dimension;
+				$default-dimension: 20px;
+				font-size: $default-dimension;
+				line-height: $default-dimension;
+				height: $default-dimension;
 
-			&.active {
-				background-color: $active-navbar-bgcolor;
+				&.active {
+					background-color: $active-navbar-bgcolor;
+				}
 			}
 
-			&:hover {
+			:last-child:not(:only-child) {
+				$dropdown-content-bottom-style: 0 0 10px 10px;
+
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				max-width: 200px;
+				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+				z-index: 1;
+				top: $default-navbar-height;
+				border-radius: $dropdown-content-bottom-style;
+
+				& > * {
+					color: #000;
+					padding: 12px 16px;
+					text-decoration: none;
+					display: block;
+					text-align: left;
+
+					&:hover {
+						background-color: #f1f1f1;
+					}
+
+					&:last-of-type {
+						border-radius: $dropdown-content-bottom-style;
+					}
+				}
+			}
+		}
+
+		&:hover > {
+			:first-child {
 				background-color: $hover-navbar-bgcolor;
 			}
-		}
 
-		&.dropdown {
-			display: inline-block;
-
-			&:hover .dropdown-content {
+			:last-child:not(:only-child) {
 				display: block;
-			}
-		}
-
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			background-color: #f9f9f9;
-			min-width: 160px;
-			max-width: 200px;
-			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-			z-index: 1;
-
-			a {
-				color: #000;
-				padding: 12px 16px;
-				text-decoration: none;
-				display: block;
-				text-align: left;
-
-				&:hover {
-					background-color: #f1f1f1;
-				}
 			}
 		}
 	}

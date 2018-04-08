@@ -1,0 +1,93 @@
+<mat-card-content
+    class="table-container mat-elevation-z8">
+
+  <header>
+    <h2 *ngIf="isViewNewUser()">新增用户</h2>
+    <h2 *ngIf="!isViewNewUser()">修改用户</h2>
+  </header>
+
+  <section>
+    <input
+        tabindex="-1"
+        type="hidden"
+        name="company"
+        [value]="activeUser.company.name"
+        placeholder="所属公司">
+
+    <input
+        tabindex="-1"
+        type="hidden"
+        name="id"
+        [value]="activeUser.id"
+        placeholder="用户编码">
+
+    <mat-form-field>
+      <input matInput
+          tabindex="102"
+          type="text"
+          name="name"
+          [(ngModel)]="activeUser.name"
+          placeholder="用户昵称">
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isViewNewUser()">
+      <input matInput
+          tabindex="103"
+          type="password"
+          name="pass"
+          [(ngModel)]="activeUser.pass"
+          [type]="hidepass ? 'password' : 'text'"
+          disabled=""
+          placeholder="用户密码">
+      <mat-icon matSuffix
+          (click)="hidepass = !hidepass">
+        {{ hidepass ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+          tabindex="201"
+          [(ngModel)]="activeUser.type.name"
+          placeholder="用户类型">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+          tabindex="301"
+          [(ngModel)]="activeUser.qq"
+          placeholder="QQ">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+          tabindex="302"
+          [(ngModel)]="activeUser.phoneNumber"
+          placeholder="手机号码">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+          tabindex="303"
+          [(ngModel)]="activeUser.landlineNumber"
+          placeholder="座机号码">
+    </mat-form-field>
+
+  </section>
+
+  <footer>
+
+    <button mat-raised-button
+        (click)="onCancel()">
+      取消
+    </button>
+
+    <button mat-raised-button
+        class="float-right"
+        (click)="onSubmit()">
+      确定
+    </button>
+
+  </footer>
+
+</mat-card-content>

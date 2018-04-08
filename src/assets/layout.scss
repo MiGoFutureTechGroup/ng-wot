@@ -1,0 +1,14 @@
+@import "./variables";
+
+mat-form-field,
+mat-checkbox,
+mat-radio-button {
+  margin-left: 20px;
+}
+
+mat-card-content > {
+  section {
+    display: inline-block;
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,30 @@
+@import "./variables";
+
+// 文本靠右对齐
+input[type="number"] {
+  text-align: right;
+}
+
+/////////////////////////////////////////////////
+// 去掉 input[type="number"] 浏览器预设样式
+/////////////////////////////////////////////////
+// Chrome
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none !important;
+}
+// Firefox
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/////////////////////////////////////////////////
+// 自动转换大小写
+/////////////////////////////////////////////////
+input.uppercase {
+  text-transform: uppercase;
+}
+
+input.lowercase {
+  text-transform: lowercase;
+}

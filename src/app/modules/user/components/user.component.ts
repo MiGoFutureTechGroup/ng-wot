@@ -1,0 +1,63 @@
+import { OnInit, Component, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { SelectionModel } from '@angular/cdk/collections';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { User, ELEMENT_DATA } from '../models/user';
+import { UserService } from '../services/user.service';
+// test
+import { Company } from '../models/company';
+import { Role } from '../models/role';
+
+@Component({
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
+})
+export class UserComponent implements OnInit {
+
+  displayedColumns = ['id', 'type', 'name', 'date', 'company', 'qq', 'phoneNumber', 'landlineNumber', 'workEMail'];
+  dataSource = new MatTableDataSource<User>(ELEMENT_DATA);
+  selection = new SelectionModel<User>(true, []);
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  constructor(
+    private router: Router,
+    private location: Location,
+    private userService: UserService,
+  ) { }
+
+  ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim()
+    filterValue = filterValue.toLowerCase()
+    this.dataSource.filter = filterValue;
+  }
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  onClickTableRow(row: User): void {
+    this.selection.toggle(row);
+    this.router.navigate(['/users/', row.id]);
+  }
+
+}

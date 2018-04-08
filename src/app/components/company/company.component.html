@@ -1,0 +1,219 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>添加供应商</h1>
+    </mat-card-title>
+    <mat-card-subtitle>Add Provider</mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- 报价单 元信息 -->
+  <mat-card-content class="table-container mat-elevation-z8">
+    <h2>公司信息</h2>
+
+    <section>
+
+      <mat-form-field>
+
+        <input matInput
+            type="text"
+            tabindex="101"
+            [(ngModel)]="company.name"
+            placeholder="公司名称"
+            required="" />
+        <button mat-button
+            *ngIf="company.name"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="company.name=''">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput
+            type="text"
+            tabindex="102"
+            [(ngModel)]="company.address"
+            placeholder="公司地址" />
+        <button mat-button
+            *ngIf="company.address"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="company.address=''">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput
+            type="text"
+            tabindex="103"
+            [(ngModel)]="company.oibc"
+            placeholder="组织机构代码" />
+        <button mat-button
+            *ngIf="company.oibc"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="company.oibc=''">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput
+            style="text-align: left"
+            type="number"
+            tabindex="104"
+            [(ngModel)]="company.postalcode"
+            placeholder="邮政编码" />
+        <button mat-button
+            *ngIf="company.postalcode"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="company.postalcode=''">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+    </section>
+
+    <section>
+
+      <button mat-raised-button
+          class="float-right"
+          color="accent"
+          (click)="saveCompany()">
+        保存
+      </button>
+
+    </section>
+
+  </mat-card-content>
+
+  <!-- 报价记录 -->
+  <mat-card-content class="table-container mat-elevation-z8">
+
+    <h2>联系人信息</h2>
+
+    <section>
+
+      <mat-form-field>
+
+        <input matInput
+            type="text"
+            tabindex="201"
+            [(ngModel)]="company.contact.name"
+            placeholder="联系人姓名"
+            required="" />
+        <button mat-button
+            *ngIf="company.contact.name"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="company.contact.name=''">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput
+            style="text-align: left"
+            type="number"
+            tabindex="202"
+            [(ngModel)]="company.contact.qq"
+            placeholder="QQ" />
+        <button mat-button
+            *ngIf="company.contact.qq"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="company.contact.qq=''">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput
+            type="phone-number"
+            tabindex="203"
+            [(ngModel)]="company.contact.phone"
+            placeholder="手机号码" />
+        <button mat-button
+            *ngIf="company.contact.phone"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="company.contact.phone=''">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput
+            type="landline-number"
+            tabindex="204"
+            [(ngModel)]="company.contact.landline"
+            placeholder="座机号码" />
+        <button mat-button
+            *ngIf="company.contact.landline"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="company.contact.landline=''">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput
+            style="text-align: left"
+            type="email"
+            min="0"
+            tabindex="205"
+            [(ngModel)]="company.contact.email"
+            placeholder="工作邮箱" />
+        <button mat-button
+            *ngIf="company.contact.email"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="company.contact.email=''">
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </mat-form-field>
+
+    </section>
+
+    <section>
+
+      <button mat-raised-button
+          class="float-right"
+          color="accent"
+          (click)="saveContact()">
+        保存
+      </button>
+
+    </section>
+
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,99 @@
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-title>
+      <h1>用户管理</h1>
+    </mat-card-title>
+    <mat-card-subtitle>User Management</mat-card-subtitle>
+  </mat-card-header>
+
+  <router-outlet></router-outlet>
+
+  <mat-card-content class="table-container mat-elevation-z8">
+
+    <header>
+      <h2>用户列表</h2>
+
+      <mat-form-field class="table-filter">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="搜索">
+      </mat-form-field>
+    </header>
+
+    <mat-table #table [dataSource]="dataSource" matSort>
+
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>类型</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.type.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>昵称</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>注册日期</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="company">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>所属公司</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.company.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="qq">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>QQ</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.qq}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="phoneNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>手机号码</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.phoneNumber}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="landlineNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>座机号码</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.landlineNumber}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="workEMail">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>电子邮箱</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.workEMail}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"
+               (click)="onClickTableRow(row)">
+      </mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   [showFirstLastButtons]="true">
+    </mat-paginator>
+
+  </mat-card-content>
+
+</mat-card>
