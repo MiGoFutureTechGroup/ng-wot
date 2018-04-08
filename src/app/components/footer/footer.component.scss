@@ -1,5 +1,4 @@
-@import "../../../assets/variables";
-@import "../../../assets/global";
+@import "../../app.g";
 
 footer {
 	@extend %topmost-node;
