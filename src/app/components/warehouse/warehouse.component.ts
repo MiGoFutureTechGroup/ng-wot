@@ -3,7 +3,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
 
 import { Warehouse, InstockLog } from '../../models/warehouse';
-import { User } from '../../models/user';
+import { User } from '../../modules/user/models/user';
 
 @Component({
   selector: 'app-warehouse',

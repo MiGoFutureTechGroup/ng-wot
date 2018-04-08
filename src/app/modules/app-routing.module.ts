@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from '../components/home/home.component';
-import { UsersComponent } from '../components/users/users.component';
-import { UserDetailComponent } from '../components/users/user-detail.component';
-import { UserTypeComponent } from '../components/users/user-type.component';
 import { MaterialsComponent } from '../components/materials/materials.component';
 import { WelcomeComponent } from '../components/welcome/welcome.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
@@ -20,7 +17,7 @@ import { InstockComponent } from '../components/warehouse/instock.component';
 import { ExstockComponent } from '../components/warehouse/exstock.component';
 import { WarehouseCheckComponent } from '../components/warehouse/warehouse-check.component';
 
-// 测试用导入
+// test import
 import { LoginComponent } from '../modules/session/components/login/login.component';
 
 
@@ -31,7 +28,8 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    component: UsersComponent
+    loadChildren: 'app/modules/user/user.module#UserModule',
+    data: { preload: true },
   },
   {
     path: 'materials',
@@ -100,11 +98,10 @@ const routes: Routes = [
   {
     path: '',
     component: WelcomeComponent,
-    pathMatch: 'full'
   },
   {
     path: '**',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
   }
 ]
 
@@ -113,8 +110,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(
       routes,
-      //{ enableTracing: true, }
-    )
+      { enableTracing: true, }
+    ),
   ],
   exports: [
     RouterModule

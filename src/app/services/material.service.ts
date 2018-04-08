@@ -18,7 +18,7 @@ export class MaterialService {
   }
 
   getMaterial(id: number | string) {
-    return this.getMaterials().map(materials => materials.find(material => material.id === +id));
+    return this.getMaterials().map(materials => materials.find(material => material.id == id));
   }
 
   addMaterial(material: Material) {

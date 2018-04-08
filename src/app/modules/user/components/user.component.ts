@@ -1,23 +1,33 @@
 import { OnInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
-import { Material } from '../../models/material';
+import { User, ELEMENT_DATA } from '../models/user';
+import { UserService } from '../services/user.service';
+// test
+import { Company } from '../models/company';
+import { Role } from '../models/role';
 
 @Component({
-  selector: 'app-material-table',
-  templateUrl: './material-table.component.html',
-  styleUrls: ['./material-table.component.scss']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
 })
-export class MaterialTableComponent implements OnInit {
+export class UserComponent implements OnInit {
 
-  displayedColumns = ['type', 'partId', 'gauge', 'guise', 'property', 'design', 'photo'];
-  dataSource = new MatTableDataSource<Material>(ELEMENT_DATA);
-  selection = new SelectionModel<Material>(true, []);
+  displayedColumns = ['id', 'type', 'name', 'date', 'company', 'qq', 'phoneNumber', 'landlineNumber', 'workEMail'];
+  dataSource = new MatTableDataSource<User>(ELEMENT_DATA);
+  selection = new SelectionModel<User>(true, []);
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private location: Location,
+    private userService: UserService,
+  ) { }
 
   ngOnInit() {
   }
@@ -45,7 +55,9 @@ export class MaterialTableComponent implements OnInit {
         this.dataSource.data.forEach(row => this.selection.select(row));
   }
 
-}
+  onClickTableRow(row: User): void {
+    this.selection.toggle(row);
+    this.router.navigate(['/users/', row.id]);
+  }
 
-const ELEMENT_DATA: Material[] = [
-];
+}

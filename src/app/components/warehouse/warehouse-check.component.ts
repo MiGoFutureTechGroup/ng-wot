@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Warehouse, AbstractLog } from '../../models/warehouse';
-import { User } from '../../models/user';
+import { User } from '../../modules/user/models/user';
 
 @Component({
   selector: 'app-warehouse-check',
