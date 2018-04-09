@@ -1,61 +1,75 @@
-<div *ngIf="data">
-  <div *ngIf="data.material">
+<mat-card-content
+    class="table-container mat-elevation-z8">
 
-    <h1 mat-dialog-title>新建料号</h1>
+  <header>
+    <h2>新建料号</h2>
+  </header>
 
-    <div mat-dialog-content class="center">
+  <section>
 
-      <mat-form-field>
-        <input matInput
-            type="text"
-            tabindex="1"
-            [(ngModel)]="data.material.id"
-            name="material.id"
-            placeholder="料号 ID">
-      </mat-form-field>
+    <mat-form-field>
+      <input matInput
+          type="text"
+          placeholder="库存编码" />
+    </mat-form-field>
 
-      <mat-form-field>
-        <input matInput
-            type="text"
-            tabindex="2"
-            [(ngModel)]="data.material.name"
-            name="material.name"
-            placeholder="料号">
-      </mat-form-field>
+    <mat-form-field>
+      <input matInput
+          type="text"
+          placeholder="品名" />
+    </mat-form-field>
 
-      <mat-form-field>
-        <input matInput
-            type="text"
-            tabindex="3"
-            [(ngModel)]="data.material.gauge"
-            name="material.gauge"
-            placeholder="规格" />
-      </mat-form-field>
+    <mat-form-field>
+      <input matInput
+          type="text"
+          placeholder="品牌" />
+    </mat-form-field>
 
-      <mat-form-field>
-        <input matInput
-            type="text"
-            tabindex="4"
-            [(ngModel)]="data.material.property"
-            name="material.property"
-            placeholder="性能参数" />
-      </mat-form-field>
+    <mat-form-field>
+      <input matInput
+          type="text"
+          placeholder="料号" />
+    </mat-form-field>
 
-      <mat-form-field>
-        <input matInput
-            type="text"
-            tabindex="5"
-            [(ngModel)]="data.material.guise"
-            name="material.guise"
-            placeholder="外观特征" />
-      </mat-form-field>
+    <mat-form-field>
+      <input matInput
+          type="text"
+          [(ngModel)]="activeMaterial.gauge"
+          name="material.gauge"
+          placeholder="规格" />
+    </mat-form-field>
 
-    </div>
+    <mat-form-field>
+      <input matInput
+          type="text"
+          [(ngModel)]="activeMaterial.guise"
+          name="material.guise"
+          placeholder="外观特征" />
+    </mat-form-field>
 
-    <div mat-dialog-actions class="center">
-      <button mat-button (click)="onCancel()">取消</button>
-      <button mat-button [mat-dialog-close]="data.material.id" cdkFocusInitial>确定</button>
-    </div>
+    <mat-form-field>
+      <input matInput
+          type="text"
+          [(ngModel)]="activeMaterial.property"
+          name="material.property"
+          placeholder="性能参数" />
+    </mat-form-field>
 
-  </div>
-</div>
+  </section>
+
+  <footer>
+
+    <button mat-raised-button
+        (click)="onCancel()">
+      取消
+    </button>
+
+    <button mat-raised-button
+        class="float-right"
+        (click)="onSubmit()">
+      确定
+    </button>
+
+  </footer>
+
+</mat-card-content>

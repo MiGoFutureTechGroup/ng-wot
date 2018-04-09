@@ -12,6 +12,7 @@ import { OrderComponent as PurchaseOrderComponent } from '../components/purchase
 import { CompanyComponent } from '../components/company/company.component';
 import { MaterialLinkComponent } from '../components/materials/material-link.component';
 import { MaterialTableComponent } from '../components/materials/material-table.component';
+import { MaterialDetailComponent } from '../components/materials/material-detail.component';
 import { WarehouseTableComponent } from '../components/warehouse/warehouse-table.component';
 import { InstockComponent } from '../components/warehouse/instock.component';
 import { ExstockComponent } from '../components/warehouse/exstock.component';
@@ -38,8 +39,8 @@ const routes: Routes = [
       path: 'link',
       component: MaterialLinkComponent,
     }, {
-      path: '',
-      component: MaterialTableComponent,
+      path: 'new',
+      component: MaterialDetailComponent,
     }]
   },
   {
