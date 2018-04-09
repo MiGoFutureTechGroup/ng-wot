@@ -10,8 +10,8 @@
     <input
         tabindex="-1"
         type="hidden"
-        name="company"
-        [value]="activeUser.company.name"
+        name="companyId"
+        [value]="activeUser.companyId"
         placeholder="所属公司">
 
     <input
@@ -48,7 +48,7 @@
     <mat-form-field>
       <input matInput
           tabindex="201"
-          [(ngModel)]="activeUser.type.name"
+          [(ngModel)]="activeUser.roleId"
           placeholder="用户类型">
     </mat-form-field>
 

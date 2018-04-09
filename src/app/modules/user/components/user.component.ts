@@ -17,7 +17,7 @@ import { Role } from '../models/role';
 })
 export class UserComponent implements OnInit {
 
-  displayedColumns = ['id', 'type', 'name', 'date', 'company', 'qq', 'phoneNumber', 'landlineNumber', 'workEMail'];
+  displayedColumns = ['id', 'roleId', 'name', 'regtime', 'companyId', 'qq', 'phoneNumber', 'landlineNumber', 'email'];
   dataSource = new MatTableDataSource<User>(ELEMENT_DATA);
   selection = new SelectionModel<User>(true, []);
   @ViewChild(MatSort) sort: MatSort;
