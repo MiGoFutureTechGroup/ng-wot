@@ -31,12 +31,6 @@ export class NavbarComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	openNewUserDialog(): void {
-	}
-
-	openNewUserTypeDialog(): void {
-	}
-
 	openNewMaterialDialog(): void {
     if (!this.selectedMaterial) {
       this.selectedMaterial = new Material();
