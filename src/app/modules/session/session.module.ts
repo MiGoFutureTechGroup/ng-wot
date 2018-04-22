@@ -15,6 +15,7 @@ import { SessionService } from './services/session.service';
 	imports: [
 		CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
 	],
 	declarations: [

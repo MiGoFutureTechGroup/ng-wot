@@ -1,3 +1,233 @@
-<p>
-  join works!
-</p>
+<mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+
+  <mat-step [stepControl]="fg01">
+
+    <form [formGroup]="fg01"
+        novalidate="">
+
+      <ng-template matStepLabel>基本资料</ng-template>
+
+      <article class="center form">
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="company"
+              tabindex="101"
+              [pattern]="pCompanyName.source"
+              type="text"
+              name="company"
+              placeholder="公司全称"
+              required="">
+
+        </mat-form-field>
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="address"
+              tabindex="102"
+              type="text"
+              name="address"
+              placeholder="公司地址"
+              required="">
+
+        </mat-form-field>
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="oibc"
+              tabindex="103"
+              [pattern]="pOIBC.source"
+              type="text"
+              name="oibc"
+              placeholder="组织机构代码">
+
+        </mat-form-field>
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="tel"
+              tabindex="104"
+              [pattern]="pLandlineNumber.source"
+              type="tel"
+              name="tel"
+              placeholder="电话">
+
+        </mat-form-field>
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="fax"
+              tabindex="105"
+              [pattern]="pLandlineNumber.source"
+              type="fax"
+              name="fax"
+              placeholder="传真">
+
+        </mat-form-field>
+
+      </article>
+
+      <footer class="center">
+
+        <button mat-raised-button
+            color="accent"
+            disabled=""
+            matStepperPrevious>上一步</button>
+
+        <button mat-raised-button
+            color="accent"
+            (click)="stepper.reset()">重置</button>
+
+        <button mat-raised-button
+            color="accent"
+            matStepperNext>下一步</button>
+
+      </footer>
+
+    </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="fg02">
+
+    <form [formGroup]="fg02"
+        novalidate="">
+
+      <ng-template matStepLabel>管理员资料</ng-template>
+
+      <article class="center form">
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="adminName"
+              tabindex="201"
+              type="text"
+              name="username"
+              required=""
+              placeholder="昵称">
+
+        </mat-form-field>
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="adminPass"
+              tabindex="202"
+              [pattern]="pStrongPassword.source"
+              type="password"
+              name="password"
+              required=""
+              placeholder="密码">
+
+        </mat-form-field>
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="idnum"
+              tabindex="203"
+              [pattern]="pIdentityNumber.source"
+              type="text"
+              name="idnum"
+              required=""
+              placeholder="身份证号">
+
+        </mat-form-field>
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="phone"
+              tabindex="204"
+              [pattern]="pMobilephNumber.source"
+              type="mobile"
+              name="phone"
+              required=""
+              placeholder="手机号码">
+
+        </mat-form-field>
+
+        <mat-form-field>
+
+          <input matInput
+              formControlName="email"
+              tabindex="205"
+              type="email"
+              name="email"
+              required=""
+              placeholder="电子邮箱">
+
+        </mat-form-field>
+
+      </article>
+
+      <footer class="center">
+
+        <button mat-raised-button
+            color="accent"
+            matStepperPrevious>上一步</button>
+
+        <button mat-raised-button
+            color="accent"
+            (click)="stepper.reset()">重置</button>
+
+        <button mat-raised-button
+            color="accent"
+            matStepperNext>下一步</button>
+
+      </footer>
+
+    </form>
+
+  </mat-step>
+
+  <mat-step>
+
+    <ng-template matStepLabel>完成</ng-template>
+
+    <article class="center form">
+
+      <div>
+
+        <p class="comment">请牢记以下<span>公司代码</span><br>这将用于贵司用户登录本网站！</p>
+
+        <input
+            tabindex="301"
+            class="center"
+            type="text"
+            name="code"
+            [value]="code"
+            maxlength="6"
+            size="12"
+            readonly=""
+            placeholder="公司代码">
+
+      </div>
+
+    </article>
+
+    <footer class="center">
+
+      <button mat-raised-button
+          color="accent"
+          matStepperPrevious>上一步</button>
+
+      <button mat-raised-button
+          color="accent"
+          (click)="stepper.reset()">重置</button>
+
+      <button mat-raised-button
+          color="accent"
+          (click)="stepper.submit()">确认</button>
+
+    </footer>
+
+  </mat-step>
+
+</mat-horizontal-stepper>

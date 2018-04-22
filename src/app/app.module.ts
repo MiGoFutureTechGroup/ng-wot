@@ -61,6 +61,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
     WarehouseCheckComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     SessionModule,

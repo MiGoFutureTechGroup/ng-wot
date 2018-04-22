@@ -1,1 +1,37 @@
 @import "../../session.g";
+
+article.center.form,
+mat-form-field {
+  width: 480px;
+}
+
+input[name="code"] {
+  font-size: 2em;
+  height: 2em;
+  line-height: 2em;
+  background-color: rgb(255, 250, 161);
+  margin: 10px auto;
+  padding: 0;
+}
+
+[name="idnum"] {
+  text-transform: uppercase;
+}
+
+button.mat-raised-button {
+  margin: 10px;
+}
+
+mat-form-field {
+  margin: 0 auto;
+}
+
+.comment {
+  span {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  line-height: 1.6em;
+}
