@@ -1,4 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -12,10 +14,17 @@ export class UserService {
   private users: BehaviorSubject<User[]>;
   private roles: BehaviorSubject<Role[]>;
 
-  constructor() {
-    let retrievedUsers: User[] = ELEMENT_DATA;
-    this.users = new BehaviorSubject<User[]>(retrievedUsers);
-    this.roles = new BehaviorSubject<Role[]>([]);
+  constructor(
+    private http: HttpClient,
+  ) {
+    this.retrieveUsers((users: User[]) => {
+      this.users = new BehaviorSubject<User[]>(users);
+      this.roles = new BehaviorSubject<Role[]>([]);
+    });
+  }
+
+  retrieveUsers(cb_next, cb_error?, cb_complete?): void {
+    this.http.get<User[]>('/api/users').subscribe(cb_next, cb_error, cb_complete);
   }
 
   getUsers() {

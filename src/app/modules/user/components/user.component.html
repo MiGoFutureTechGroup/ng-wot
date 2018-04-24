@@ -19,7 +19,11 @@
       </mat-form-field>
     </header>
 
-    <mat-table #table [dataSource]="dataSource" matSort>
+    <mat-table
+        matSort
+        (matSortChange)="onSortUsers($event)"
+        #table
+        [dataSource]="dataSource">
 
       <!-- Checkbox Column -->
       <ng-container matColumnDef="select">

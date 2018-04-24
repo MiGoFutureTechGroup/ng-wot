@@ -1,8 +1,10 @@
 import { OnInit, Component, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { SelectionModel } from '@angular/cdk/collections';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { SelectionModel } from '@angular/cdk/collections';
+import { Sort } from '@angular/material';
 
 import { User, ELEMENT_DATA } from '../models/user';
 import { UserService } from '../services/user.service';
@@ -18,8 +20,8 @@ import { Role } from '../models/role';
 export class UserComponent implements OnInit {
 
   displayedColumns = ['id', 'roleId', 'name', 'regtime', 'companyId', 'qq', 'phoneNumber', 'landlineNumber', 'email'];
-  dataSource = new MatTableDataSource<User>(ELEMENT_DATA);
-  selection = new SelectionModel<User>(true, []);
+  dataSource: MatTableDataSource<User> = new MatTableDataSource<User>(ELEMENT_DATA);
+  selection: SelectionModel<User> = new SelectionModel<User>(true, []);
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -30,6 +32,7 @@ export class UserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.dataSource = new MatTableDataSource<User>(this.userService.getUsers().value);
   }
 
   ngAfterViewInit() {
@@ -58,6 +61,13 @@ export class UserComponent implements OnInit {
   onClickTableRow(row: User): void {
     this.selection.toggle(row);
     this.router.navigate(['/users/', row.id]);
+  }
+
+  onSortUsers(sort: Sort) {
+    console.log('Sorting ...');
+    if (!sort.active || sort.direction == '') {
+      return;
+    }
   }
 
 }
