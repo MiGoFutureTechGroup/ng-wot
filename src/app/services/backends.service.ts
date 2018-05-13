@@ -54,8 +54,15 @@ export class BackendsService {
 
       },
       // get
-      () => {
-        return this.data['real_material'].bs;
+      (materialId?: number) => {
+        let bs = this.data['real_material'].bs;
+
+        if (materialId === undefined) {
+          return bs;
+        } else {
+          // TODO get by id
+          return bs.map(materials => materials.find(material => material.id == materialId));;
+        }
       },
       // create
       (material: Material) => {

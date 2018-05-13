@@ -27,8 +27,6 @@ import { MaterialLinkComponent } from './components/materials/material-link.comp
 import { MaterialTableComponent } from './components/materials/material-table.component';
 // Services
 import { MaterialDetailResolverService } from './components/materials/services/material-detail-resolver.service';
-import { MaterialService } from './services/material.service';
-import { CompanyService } from './services/company.service';
 import { WarehouseTableComponent } from './components/warehouse/warehouse-table.component';
 import { InstockComponent } from './components/warehouse/instock.component';
 import { ExstockComponent } from './components/warehouse/exstock.component';
@@ -75,8 +73,6 @@ import { BackendsService } from './services/backends.service';
   ],
   providers: [
     MaterialDetailResolverService,
-    MaterialService,
-    CompanyService,
     // Datepicker
     {
       provide: MAT_DATE_LOCALE,
