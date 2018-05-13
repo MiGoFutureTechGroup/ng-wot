@@ -1,29 +1,18 @@
 <div class="container">
-	<img class="avatar" alt="头像">
-	<div class="login-form">
+
+  <img class="avatar">
+
+  <div class="login-form">
+
     <mat-form-field>
+
       <input matInput
-          tabindex="1"
-          type="text"
-          name="code"
-          [(ngModel)]="code"
-          placeholder="公司代码" />
-      <button mat-button
-          matSuffix
-          mat-icon-button
-          *ngIf="code"
-          (click)="code=''"
-          aria-label="Clear">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
-		<mat-form-field>
-			<input matInput
           tabindex="2"
           type="text"
           name="username"
           [(ngModel)]="username"
           placeholder="用户昵称" />
+
       <button mat-button
           matSuffix
           mat-icon-button
@@ -32,14 +21,18 @@
           aria-label="Clear">
         <mat-icon>close</mat-icon>
       </button>
-		</mat-form-field>
-		<mat-form-field>
-			<input matInput
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+      <input matInput
           tabindex="3"
           type="password"
           name="password"
           [(ngModel)]="password"
           placeholder="密码" />
+
       <button mat-button
           matSuffix
           mat-icon-button
@@ -48,13 +41,19 @@
           aria-label="Clear">
         <mat-icon>close</mat-icon>
       </button>
-		</mat-form-field>
-	</div>
-	<div mat-dialog-actions>
-		<button mat-raised-button
+
+    </mat-form-field>
+
+  </div>
+
+  <div mat-dialog-actions>
+
+    <button mat-raised-button
         color="accent"
-        tabindex="4">
+        tabindex="4"
+        (click)="login()">
       登录
     </button>
-	</div>
+
+  </div>
 </div>
