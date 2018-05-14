@@ -54,13 +54,13 @@
       </div>
     </li>
 
-    <li style="float: right">
+    <li style="float: right" *ngIf="!session.isLoggedIn">
       <a routerLink="/join" routerLinkActive="active">注册</a>
     </li>
-    <li style="float: right">
+    <li style="float: right" *ngIf="!session.isLoggedIn">
       <a routerLink="/login" routerLinkActive="active">登录</a>
     </li>
-    <li style="float: right">
+    <li style="float: right" *ngIf="session.isLoggedIn">
       <a routerLink="/logout">退出</a>
     </li>
   </ul>
