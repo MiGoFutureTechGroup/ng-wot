@@ -8,7 +8,6 @@ import { MaterialModule } from '../material.module';
 // components
 import { LoginComponent } from './components/login/login.component';
 import { JoinComponent } from './components/join/join.component';
-import { LogoutComponent } from './components/logout/logout.component';
 // services
 import { SessionService } from './services/session.service';
 
@@ -22,7 +21,6 @@ import { SessionService } from './services/session.service';
 	declarations: [
 		LoginComponent,
 		JoinComponent,
-		LogoutComponent,
 	],
 	providers: [
 		SessionService
