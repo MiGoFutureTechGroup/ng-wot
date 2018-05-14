@@ -7,6 +7,7 @@ import { Material } from '../../models/material';
 import { MaterialType } from '../../models/material-type';
 import { MaterialDetailComponent } from '../materials/material-detail.component';
 import { MaterialTypeComponent } from '../materials/material-type.component';
+import { SessionService } from '../../modules/session/services/session.service';
 
 
 const DIALOG_WIDTH: string = '250px';
@@ -26,6 +27,7 @@ export class NavbarComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     public dialog: MatDialog,
+    private session: SessionService,
   ) { }
 
   ngOnInit() {
