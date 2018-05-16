@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { SessionService } from '../../services/session.service';
 
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private session: SessionService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -33,12 +35,12 @@ export class LoginComponent implements OnInit {
 
     body = JSON.stringify(body);
     this.http.post<any>(url, body).subscribe((response) => {
-      if (response.status_code == 200) {
+      if (response.data.login_state) {
         this.autoRedirect();
         this.session.isLoggedIn = true;
+        this.router.navigate(['/']);
       }
     });
-    // TODO handle ajax response
   }
 
   autoRedirect() {
