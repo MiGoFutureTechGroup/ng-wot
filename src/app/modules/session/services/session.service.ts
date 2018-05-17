@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class SessionService {
 
   private loginState: boolean = false;
 
-	constructor() { }
+	constructor(
+    private http: HttpClient,
+  ) {
+    this.tryLogin();
+  }
 
   set isLoggedIn(loginState: boolean) {
     this.loginState = loginState;
@@ -13,6 +18,26 @@ export class SessionService {
 
   get isLoggedIn() {
     return this.loginState;
+  }
+
+  tryLogin(username?: string, password?: string, callback?: Function): void {
+    let url: string = '/api/login/';
+    let body: any = {
+      'data': {
+        'username': username,
+        'password': password
+      }
+    };
+    console.log('Login attempt:', url, body);
+
+    body = JSON.stringify(body);
+    this.http.post<any>(url, body).subscribe((response) => {
+      if (response.data.login_state) {
+        this.isLoggedIn = true;
+        if (callback)
+          callback();
+      }
+    });
   }
 
 }
