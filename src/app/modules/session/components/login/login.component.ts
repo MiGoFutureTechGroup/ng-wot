@@ -24,23 +24,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    let url: string = '/api/login/';
-    let body: any = {
-      'data': {
-        'username': this.username,
-        'password': this.password
-      }
-    };
-    console.log('Login attempt:', url, body);
+    this.session.tryLogin(this.username, this.password, this.loginCallback);
+  }
 
-    body = JSON.stringify(body);
-    this.http.post<any>(url, body).subscribe((response) => {
-      if (response.data.login_state) {
-        this.autoRedirect();
-        this.session.isLoggedIn = true;
-        this.router.navigate(['/']);
-      }
-    });
+  private loginCallback(): void {
+    this.autoRedirect();
+    this.router.navigate(['/']);
   }
 
   autoRedirect() {
