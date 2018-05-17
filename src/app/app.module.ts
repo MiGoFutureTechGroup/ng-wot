@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 // import { BrowserModule } from '@angular/platform-browser';
 // Modules
 import { AppRoutingModule } from './modules/app-routing.module';
@@ -25,15 +27,12 @@ import { CompanyComponent } from './components/company/company.component';
 import { MaterialTypeComponent } from './components/materials/material-type.component';
 import { MaterialLinkComponent } from './components/materials/material-link.component';
 import { MaterialTableComponent } from './components/materials/material-table.component';
-// Services
-import { MaterialDetailResolverService } from './components/materials/services/material-detail-resolver.service';
 import { WarehouseTableComponent } from './components/warehouse/warehouse-table.component';
 import { InstockComponent } from './components/warehouse/instock.component';
 import { ExstockComponent } from './components/warehouse/exstock.component';
 import { WarehouseCheckComponent } from './components/warehouse/warehouse-check.component';
-
-import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
-import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+// Services
+import { MaterialDetailResolverService } from './components/materials/services/material-detail-resolver.service';
 import { BackendsService } from './services/backends.service';
 
 @NgModule({
