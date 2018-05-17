@@ -30,14 +30,19 @@ export class SessionService {
     };
     console.log('Login attempt:', url, body);
 
-    body = JSON.stringify(body);
-    this.http.post<any>(url, body).subscribe((response) => {
-      if (response.data.login_state) {
-        this.isLoggedIn = true;
-        if (callback)
+    if (callback) {
+      body = JSON.stringify(body);
+      this.http.post<any>(url, body).subscribe((response) => {
+        this.isLoggedIn = response.data.login_state;
+        if (response.data.login_state) {
           callback();
-      }
-    });
+        }
+      });
+    } else {
+      this.http.get<any>(url).subscribe((response) => {
+        this.isLoggedIn = response.data.login_state;
+      });
+    }
   }
 
 }
