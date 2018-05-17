@@ -10,20 +10,22 @@ import { LoginComponent } from './components/login/login.component';
 import { JoinComponent } from './components/join/join.component';
 // services
 import { SessionService } from './services/session.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
-	imports: [
-		CommonModule,
+  imports: [
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-	],
-	declarations: [
-		LoginComponent,
-		JoinComponent,
-	],
-	providers: [
-		SessionService
-	]
+  ],
+  declarations: [
+    LoginComponent,
+    JoinComponent,
+  ],
+  providers: [
+    SessionService,
+    AuthGuard,
+  ]
 })
 export class SessionModule { }
