@@ -37,9 +37,9 @@ export class SessionService {
     if (this.redirectUrl) {
       body = JSON.stringify(body);
       this.http.post<any>(url, body).subscribe((response) => {
-        this.isLoggedIn = response.data.login_state;
-        if (response.data.login_state) {
-          this.router.navigate([this.redirectUrl]);
+        let login_state = this.isLoggedIn = response.data.login_state;
+        if (login_state) {
+          this.router.navigate([ this.redirectUrl ]);
         }
       });
     } else {
