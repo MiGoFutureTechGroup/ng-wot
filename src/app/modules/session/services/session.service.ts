@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class SessionService {
 
   private loginState: boolean = false;
+  redirectUrl: string;
 
 	constructor(
     private http: HttpClient,
+    private router: Router,
   ) {
+    this.redirectUrl = undefined;
     this.tryLogin();
   }
 
@@ -20,7 +24,7 @@ export class SessionService {
     return this.loginState;
   }
 
-  tryLogin(username?: string, password?: string, callback?: Function): void {
+  tryLogin(username?: string, password?: string): void {
     let url: string = '/api/login/';
     let body: any = {
       'data': {
@@ -30,12 +34,12 @@ export class SessionService {
     };
     console.log('Login attempt:', url, body);
 
-    if (callback) {
+    if (this.redirectUrl) {
       body = JSON.stringify(body);
       this.http.post<any>(url, body).subscribe((response) => {
         this.isLoggedIn = response.data.login_state;
         if (response.data.login_state) {
-          callback();
+          this.router.navigate([this.redirectUrl]);
         }
       });
     } else {
