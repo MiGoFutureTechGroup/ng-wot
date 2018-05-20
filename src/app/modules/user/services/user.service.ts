@@ -11,15 +11,14 @@ import { Role } from '../models/role';
 @Injectable()
 export class UserService {
 
-  private users: BehaviorSubject<User[]>;
-  private roles: BehaviorSubject<Role[]>;
+  private users: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
+  private roles: BehaviorSubject<Role[]> = new BehaviorSubject<Role[]>([]);
 
   constructor(
     private http: HttpClient,
   ) {
     this.retrieveUsers((users: User[]) => {
-      this.users = new BehaviorSubject<User[]>(users);
-      this.roles = new BehaviorSubject<Role[]>([]);
+      this.users.next(users);
     });
   }
 
