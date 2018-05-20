@@ -21,6 +21,7 @@ import { WarehouseCheckComponent } from '../components/warehouse/warehouse-check
 // test import
 import { LoginComponent } from '../modules/session/components/login/login.component';
 import { JoinComponent } from '../modules/session/components/join/join.component';
+import { LogoutComponent } from '../modules/session/components/logout/logout.component';
 
 
 const routes: Routes = [
@@ -100,6 +101,10 @@ const routes: Routes = [
   {
     path: 'join',
     component: JoinComponent,
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
   },
   {
     path: '',
