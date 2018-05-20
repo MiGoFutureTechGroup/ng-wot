@@ -17,13 +17,20 @@ export class UserService {
   constructor(
     private http: HttpClient,
   ) {
-    this.retrieveUsers((users: User[]) => {
-      this.users.next(users);
+    this.retrieveUsers((response) => {
+      if (response.status_code == 200) {
+        let data = response.data;
+        let pages = data.pages;
+        let pagesize = data.pagesize;
+        let users = data.users;
+
+        this.users.next(users);
+      }
     });
   }
 
   retrieveUsers(cb_next, cb_error?, cb_complete?): void {
-    this.http.get<User[]>('/api/users').subscribe(cb_next, cb_error, cb_complete);
+    this.http.get<any>('/api/users/').subscribe(cb_next, cb_error, cb_complete);
   }
 
   getUsers() {
