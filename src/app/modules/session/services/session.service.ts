@@ -49,4 +49,17 @@ export class SessionService {
     }
   }
 
+  tryLogout(): void {
+    let url: string = '/api/logout/';
+    let body: any = undefined;
+    console.log('Logout attempt:', url);
+
+    this.http.post<any>(url, body).subscribe((response) => {
+      if (response.status_code == 200) {
+        this.isLoggedIn = false;
+        this.router.navigate(['/login']);
+      }
+    });
+  }
+
 }
