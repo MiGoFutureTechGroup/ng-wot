@@ -54,9 +54,9 @@ export class SessionService {
     let body: any = undefined;
     console.log('Logout attempt:', url);
 
+    this.isLoggedIn = false;
     this.http.post<any>(url, body).subscribe((response) => {
       if (response.status_code == 200) {
-        this.isLoggedIn = false;
         this.router.navigate(['/login']);
       }
     });
