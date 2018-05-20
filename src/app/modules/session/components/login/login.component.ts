@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { SessionService } from '../../services/session.service';
 
@@ -14,7 +13,6 @@ export class LoginComponent implements OnInit {
   password: string;
 
   constructor(
-    private http: HttpClient,
     private session: SessionService,
   ) { }
 
