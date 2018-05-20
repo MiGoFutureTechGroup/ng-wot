@@ -11,7 +11,6 @@ import { JoinComponent } from './components/join/join.component';
 import { LogoutComponent } from './components/logout/logout.component';
 // services
 import { SessionService } from './services/session.service';
-import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   imports: [
@@ -27,7 +26,6 @@ import { AuthGuard } from './guards/auth.guard';
   ],
   providers: [
     SessionService,
-    AuthGuard,
   ]
 })
 export class SessionModule { }
